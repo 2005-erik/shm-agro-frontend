@@ -824,6 +824,27 @@ textarea.input { min-height: 90px; resize: vertical; }
       border-radius: 8px; text-decoration: none;
     }
     #shm-mobile-menu .mm-link:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent-700); }
+  #shm-chat-fab { width: 52px !important; height: 52px !important; right: 16px !important; bottom: 16px !important; }
+  #shm-call-fab { width: 48px !important; height: 48px !important; right: 18px !important; bottom: 78px !important; }
+  main, section { padding-left: 18px !important; padding-right: 18px !important; }
+  h1 { font-size: clamp(30px, 8vw, 44px) !important; }
+  h2 { font-size: clamp(24px, 6.5vw, 34px) !important; }
+  #shm-chat-panel {
+    right: 0 !important; left: 0 !important; bottom: 0 !important; top: 0 !important;
+    width: 100vw !important; max-width: 100vw !important;
+    height: 100vh !important; max-height: 100vh !important;
+    border-radius: 0 !important; border: none !important;
+  }
+  .shm-chat-foot { padding: 14px !important; }
+  .shm-chat-foot input { font-size: 16px !important; padding: 13px 16px !important; }
+  .shm-chat-foot button {
+    min-width: 52px !important; height: 48px !important; font-size: 24px !important;
+    display: flex !important; align-items: center; justify-content: center;
+  }
+  #shm-mobile-menu.open {
+    position: fixed !important; top: 76px !important; left: 12px !important; right: 12px !important;
+    margin: 0 !important; max-height: calc(100vh - 96px); overflow-y: auto; z-index: 55 !important;
+  }
   /* --- производительность на слабых телефонах: отключаем тяжёлые эффекты --- */
   body::before { background-attachment: scroll !important; filter: saturate(0.45) brightness(1.25) !important; }
   body::after { display: none !important; }
@@ -974,7 +995,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 <main style="max-width:1180px;margin:0 auto;padding:36px 32px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
   <h1 style="font-size:40px;text-transform:uppercase;margin:0 0 6px">Каталог техники</h1>
   <p style="margin:0 0 26px;font-size:16px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Выберите категорию слева. По каждой модели — характеристики и коммерческое предложение.</p>
-  <div style="display:grid;grid-template-columns:230px 1fr;gap:28px;align-items:start">
+  <div class="grid-stack" style="display:grid;grid-template-columns:230px 1fr;gap:28px;align-items:start">
     <aside class="blueprint" style="padding:16px;position:sticky;top:88px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <div style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:10px">Категории</div>
       <div style="display:flex;flex-direction:column;gap:2px">
@@ -1016,7 +1037,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 <sc-if value="{{ isModel }}" hint-placeholder-val="{{ false }}">
 <main style="max-width:1180px;margin:0 auto;padding:24px 32px 48px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
   <button type="button" class="btn btn-ghost" style="padding-left:0;margin-bottom:16px" sc-camel-on-click="{{ goCatalog }}">← Назад в каталог</button>
-  <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:start">
+  <div class="grid-stack" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:start">
     <div>
       <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <div class="ph" style="aspect-ratio:16/11">
@@ -1180,7 +1201,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 <!-- ============================= ADMIN ============================= -->
 <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
-<div style="display:grid;grid-template-columns:220px 1fr;min-height:100vh">
+<div class="grid-stack" style="display:grid;grid-template-columns:220px 1fr;min-height:100vh">
   <aside style="border-right:1px solid var(--color-divider);padding:20px 14px;background:var(--color-surface)">
     <div style="font-family:var(--font-heading);font-weight:600;font-size:16px;padding:0 8px 16px;display:flex;align-items:center;gap:8px">
       <span style="display:inline-grid;place-items:center;width:26px;height:26px;background:var(--color-accent);color:var(--color-bg);font-size:12px">СХМ</span>Админка
