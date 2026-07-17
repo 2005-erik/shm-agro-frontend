@@ -1566,9 +1566,10 @@ class Component extends DCLogic {
     (async () => {
       try {
         if (!window.__supa) return;
-        const [mRes, nRes] = await Promise.all([
+        const [mRes, nRes, rRes] = await Promise.all([
           window.__supa.from('models').select('*').order('sort_order', { ascending: true }),
           window.__supa.from('news').select('*').order('created_at', { ascending: false }),
+          window.__supa.from('requests').select('*').order('created_at', { ascending: false }),
         ]);
         const patch = {};
         if (mRes && mRes.data && mRes.data.length) {
@@ -1582,6 +1583,12 @@ class Component extends DCLogic {
           patch.news = nRes.data.map(r => ({
             id: r.id, title: r.title, date: r.date, excerpt: r.excerpt,
             body: r.body || [], cover: r.cover,
+          }));
+        }
+        if (rRes && rRes.data) {
+          patch.requests = rRes.data.map(r => ({
+            id: 'r' + r.id, date: (r.created_at || '').slice(0,10), type: r.type,
+            fio: r.fio, phone: r.phone, meta: r.meta, status: r.status || 'Новая',
           }));
         }
         if (Object.keys(patch).length) this.setState(patch);
@@ -1782,14 +1789,17 @@ class Component extends DCLogic {
         const meta = (m ? m.name : 'Общая заявка') + ' · ' + (f.k_region.value||'—');
         const rq = { id:'r'+Date.now(), date:this.today(), type:'КП', fio:f.k_name.value, phone:f.k_phone.value, meta, status:'Новая' };
         this.setState({ requests:[rq, ...st.requests], modal:null });
+        if (window.__supa) { window.__supa.from('requests').insert({ type:'КП', fio:rq.fio, phone:rq.phone, meta, status:'Новая' }).then(()=>{}, (err)=>console.warn('supa insert failed', err)); }
         this.showToast('Заявка на КП отправлена. Мы свяжемся с вами.'); },
       submitCall: (e) => { e.preventDefault(); const f=e.target;
         const rq = { id:'r'+Date.now(), date:this.today(), type:'Звонок', fio:f.cb_name.value, phone:f.cb_phone.value, meta:'—', status:'Новая' };
         this.setState({ requests:[rq, ...st.requests], modal:null });
+        if (window.__supa) { window.__supa.from('requests').insert({ type:'Звонок', fio:rq.fio, phone:rq.phone, meta:'—', status:'Новая' }).then(()=>{}, (err)=>console.warn('supa insert failed', err)); }
         this.showToast('Заявка на звонок принята. Скоро перезвоним.'); },
       submitContact: (e) => { e.preventDefault(); const f=e.target;
         const rq = { id:'r'+Date.now(), date:this.today(), type:'Звонок', fio:f.c_name.value, phone:f.c_phone.value, meta:'Обратная связь', status:'Новая' };
         this.setState({ requests:[rq, ...st.requests] }); f.reset();
+        if (window.__supa) { window.__supa.from('requests').insert({ type:'Звонок', fio:rq.fio, phone:rq.phone, meta:'Обратная связь', status:'Новая' }).then(()=>{}, (err)=>console.warn('supa insert failed', err)); }
         this.showToast('Сообщение отправлено. Спасибо!'); },
 
       // cert lightbox
