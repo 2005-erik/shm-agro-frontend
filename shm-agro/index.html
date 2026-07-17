@@ -9,6 +9,19 @@ window.__resources = Object.assign(window.__resources || {}, {
 });
 </script>
 <script src="assets/asset-01.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  window.SUPABASE_URL = "https://dtmmeyshpfnbxqfctegz.supabase.co";
+  window.SUPABASE_KEY = "sb_publishable_9oNgQW47Pzb067VNApvt2g_dMcz5pAE";
+  window.__supa = null;
+  window.addEventListener('DOMContentLoaded', function(){
+    try {
+      if (window.supabase && window.supabase.createClient) {
+        window.__supa = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_KEY);
+      }
+    } catch(e){ console.warn('Supabase init failed', e); }
+  });
+</script>
 </head>
 <body>
 
@@ -1449,7 +1462,7 @@ class Component extends DCLogic {
     lightboxOpen: false, lightboxImages: [], lightboxIndex: 0, lightboxTitle: '',
     heroTitle: 'Сельхозтехника, сделанная для степи',
     heroSubtitle: 'Собственное производство тракторов, комбайнов и посевных комплексов в Казахстане.',
-    adminTab: 'catalog', toast: null,
+    adminTab: 'catalog', toast: null, editForm: {},
     models: [
       { id:'t2204', name:'Трактор СХМ-2204', cat:'traktory', photo:'assets/t2204-main.jpg', gallery:['assets/t2204-side.jpg','assets/t2204-rear.jpg','assets/t2204-cabin.jpg','assets/t2204-work.jpg'], short:'Мощный колёсный трактор 220 л.с. для тяжёлых полевых работ.', subsidized:true,
         desc:'Универсальный колёсный трактор тягового класса 5 для основной обработки почвы, посева и транспортных работ. Двигатель с турбонаддувом, комфортная кабина с кондиционером и малошумной изоляцией. Рассчитан на интенсивную эксплуатацию в условиях резко-континентального климата.',
@@ -1514,6 +1527,31 @@ class Component extends DCLogic {
 
   go(page, extra) { this.setState({ page, modal:null, ...(extra||{}) }); window.scrollTo(0,0); }  showToast(msg) { this.setState({ toast: msg }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ toast:null }), 2600); }
   componentDidMount() {
+    (async () => {
+      try {
+        if (!window.__supa) return;
+        const [mRes, nRes] = await Promise.all([
+          window.__supa.from('models').select('*').order('sort_order', { ascending: true }),
+          window.__supa.from('news').select('*').order('created_at', { ascending: false }),
+        ]);
+        const patch = {};
+        if (mRes && mRes.data && mRes.data.length) {
+          patch.models = mRes.data.map(r => ({
+            id: r.id, name: r.name, cat: r.cat, short: r.short, desc: r.descr,
+            subsidized: !!r.subsidized, photo: r.photo,
+            gallery: r.gallery || [], specs: r.specs || [],
+          }));
+        }
+        if (nRes && nRes.data && nRes.data.length) {
+          patch.news = nRes.data.map(r => ({
+            id: r.id, title: r.title, date: r.date, excerpt: r.excerpt,
+            body: r.body || [], cover: r.cover,
+          }));
+        }
+        if (Object.keys(patch).length) this.setState(patch);
+      } catch (e) { console.warn('Supabase load failed, using built-in data', e); }
+    })();
+
     this._onLightboxKey = (e) => {
       if (!this.state.lightboxOpen) return;
       if (e.key === 'Escape') {
@@ -1749,10 +1787,10 @@ class Component extends DCLogic {
 
       adminModels: st.models.map(m => ({ name:m.name, catName:this.catName(m.cat),
         subsidized:m.subsidized, notSubsidized:!m.subsidized,
-        edit: () => this.showToast('Открыта карточка: '+m.name),
+        edit: () => this.setState({ modal:'editModel', editModelId: m.id, editForm: { name:m.name, short:m.short||'', cat:m.cat, subsidized:!!m.subsidized } }),
         del: () => { if(confirm('Удалить модель «'+m.name+'»?')) { this.setState({ models: st.models.filter(x=>x.id!==m.id) }); this.showToast('Модель удалена'); } } })),
       adminNewsList: st.news.map(n => ({ title:n.title, date:n.date,
-        edit: () => this.showToast('Редактирование: '+n.title),
+        edit: () => this.setState({ modal:'editNews', editNewsId: n.id, editForm: { title:n.title, date:n.date, excerpt:n.excerpt||'' } }),
         del: () => { if(confirm('Удалить статью?')) { this.setState({ news: st.news.filter(x=>x.id!==n.id) }); this.showToast('Статья удалена'); } } })),
       requests: st.requests.map(r => ({ ...r, tel:'tel:'+r.phone.replace(/\s/g,''),
         tagClass: r.type==='КП' ? 'tag tag-accent' : 'tag tag-outline',
