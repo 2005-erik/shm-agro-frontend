@@ -1831,6 +1831,12 @@ class Component extends DCLogic {
     display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .18s,background .18s}
   #shm-chat-fab:hover{transform:scale(1.06);background:var(--color-accent-600)}
   #shm-chat-fab.hidden{display:none}
+  .admin-fabs #shm-chat-fab{ left:16px !important; right:auto !important; }
+  .admin-fabs #shm-call-fab{ left:18px !important; right:auto !important; }
+  @media(min-width:761px){
+    .admin-fabs #shm-chat-fab{ left:auto !important; right:22px !important; }
+    .admin-fabs #shm-call-fab{ left:auto !important; right:22px !important; }
+  }
   #shm-call-fab{position:fixed;right:22px;bottom:92px;z-index:60;width:56px;height:56px;border-radius:50%;
     background:#fff;color:var(--color-accent);border:2px solid var(--color-accent);cursor:pointer;
     box-shadow:0 6px 18px color-mix(in srgb,#1d3f0e 22%,transparent);
@@ -2056,19 +2062,20 @@ class Component extends DCLogic {
 </script>
 <script>
 (function(){
-  function updateFabs(){
-    var call=document.getElementById('shm-call-fab');
-    var chat=document.getElementById('shm-chat-fab');
-    var inAdmin=[].slice.call(document.querySelectorAll('a,button,span')).some(function(el){
-      return el.offsetParent!==null && /На сайт/.test(el.textContent);
-    });
-    if(call) call.style.display = inAdmin ? 'none' : '';
-    if(chat) chat.style.display = inAdmin ? 'none' : '';
-  }
-  var mo=new MutationObserver(updateFabs);
-  mo.observe(document.body,{childList:true,subtree:true});
-  document.addEventListener('click', function(){ setTimeout(updateFabs, 100); });
-  updateFabs();
+function updateFabs(){
+var inAdmin=[].slice.call(document.querySelectorAll('a,button,span')).some(function(el){
+return el.offsetParent!==null && /На сайт/.test(el.textContent);
+});
+document.body.classList.toggle('admin-fabs', inAdmin);
+var call=document.getElementById('shm-call-fab');
+var chat=document.getElementById('shm-chat-fab');
+if(call) call.style.display='';
+if(chat) chat.style.display='';
+}
+var mo=new MutationObserver(updateFabs);
+mo.observe(document.body,{childList:true,subtree:true});
+document.addEventListener('click', function(){ setTimeout(updateFabs, 100); });
+updateFabs();
 })();
 </script>
 </body></html>
