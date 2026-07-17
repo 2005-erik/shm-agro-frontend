@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.__resources = Object.assign(window.__resources || {}, {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/asset-02.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/asset-03.js"
+});
+</script>
+<script src="assets/asset-01.js"></script>
+</head>
+<body>
+
+<x-dc>
+<helmet>
+  <style>/* Industry — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-00.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-01.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-02.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-03.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-04.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-05.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-06.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-07.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-08.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-09.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-10.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-11.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-12.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-13.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-14.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f2f2f3;
+  --color-surface: #e9e9ea;
+  --color-text: #1d1f20;
+  --color-accent: #5980a6;
+  --color-accent-2: #728fab;
+  --color-divider: color-mix(in srgb, #1d1f20 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f5f5f8;
+  --color-neutral-200: #e7e7ea;
+  --color-neutral-300: #d4d4d7;
+  --color-neutral-400: #b7b7ba;
+  --color-neutral-500: #98989b;
+  --color-neutral-600: #7a7a7d;
+  --color-neutral-700: #5d5d60;
+  --color-neutral-800: #424244;
+  --color-neutral-900: #2b2b2d;
+
+  --color-accent-100: #eef6ff;
+  --color-accent-200: #d6ebff;
+  --color-accent-300: #b5d9fd;
+  --color-accent-400: #94bce3;
+  --color-accent-500: #749dc4;
+  --color-accent-600: #597ea3;
+  --color-accent-700: #416180;
+  --color-accent-800: #2c455d;
+  --color-accent-900: #1d2d3d;
+
+  --color-accent-2-100: #eef6ff;
+  --color-accent-2-200: #d6ebff;
+  --color-accent-2-300: #bdd8f2;
+  --color-accent-2-400: #9ebbd8;
+  --color-accent-2-500: #7e9cb8;
+  --color-accent-2-600: #627d98;
+  --color-accent-2-700: #486077;
+  --color-accent-2-800: #314457;
+  --color-accent-2-900: #1f2d3a;
+
+  --font-heading: "Barlow Condensed", system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Barlow", system-ui, sans-serif;
+
+  --space-1: 3.4px;
+  --space-2: 6.8px;
+  --space-3: 10.2px;
+  --space-4: 13.6px;
+  --space-6: 20.4px;
+  --space-8: 27.2px;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 7px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2b2b2d 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2b2b2d 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2b2b2d 22%, transparent);
+}
+
+body {
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2;
+  background-image: url("assets/hero-bg.jpg");
+  background-size: cover; background-position: center; background-attachment: fixed;
+  filter: saturate(0.2) brightness(1.45) blur(2px);
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background-image: url("assets/hero-bg.jpg");
+  background-size: cover; background-position: center; background-attachment: fixed;
+  -webkit-mask-image: radial-gradient(circle var(--spot-r, 0px) at var(--spot-x, -600px) var(--spot-y, -600px), #000 0%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(circle var(--spot-r, 0px) at var(--spot-x, -600px) var(--spot-y, -600px), #000 0%, #000 50%, transparent 100%);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.blueprint {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  border-radius: 4px;
+  box-shadow: 0 6px 20px color-mix(in srgb, #1d3f0e 14%, transparent);
+}
+/* The overlay image treatments (halftone, duotone) clip their overlay
+   (overflow:hidden); a blueprint wrapper draws its registration marks
+   outside the box, so when both classes share a wrapper the frame must
+   win. */
+.text-block {
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  border-radius: 14px;
+  padding: 28px 30px;
+  box-shadow: 0 8px 30px color-mix(in srgb, #1d3f0e 12%, transparent);
+  backdrop-filter: blur(4px);
+}
+.site-footer {
+  background: #1d3f0e;
+  margin-top: 20px;
+  border-top: none;
+}
+.site-footer, .site-footer p, .site-footer a, .site-footer .nav-brand,
+.site-footer div { color: rgba(255,255,255,0.86); }
+.site-footer .nav-brand { color: #ffffff; }
+.site-footer a:not(.btn) { color: rgba(255,255,255,0.82); transition: color .15s; }
+.site-footer a:not(.btn):hover { color: #a9e07a; }
+.site-footer .navlink::after { background: #a9e07a; }
+.site-footer .footer-label { color: rgba(169,224,122,0.9) !important; }
+.site-footer .footer-copy { border-top: 1px solid rgba(255,255,255,0.14); }
+.site-footer .footer-copy div { color: rgba(255,255,255,0.5); }
+.blueprint.halftone, .blueprint.plate, .blueprint.duotone { overflow: visible; }
+.blueprint > .corner {
+  display: none;
+}
+.corner-unused {
+  position: absolute; width: 11px; height: 11px;
+  color: var(--color-accent);
+}
+.blueprint > .corner::before, .blueprint > .corner::after {
+  content: ""; position: absolute; background: currentColor;
+}
+.blueprint > .corner::before { top: 0; width: 2px; height: 100%; }
+.blueprint > .corner::after  { top: 0; width: 100%; height: 2px; }
+.blueprint > .corner.tl { top: -6px; left: -6px; }
+.blueprint > .corner.tl::before { left: 0; } .blueprint > .corner.tl::after { left: 0; }
+.blueprint > .corner.tr { top: -6px; right: -6px; }
+.blueprint > .corner.tr::before { right: 0; } .blueprint > .corner.tr::after { right: 0; }
+.blueprint > .corner.bl { bottom: -6px; left: -6px; }
+.blueprint > .corner.bl::before { left: 0; bottom: 0; top: auto; } .blueprint > .corner.bl::after { left: 0; bottom: 0; top: auto; }
+.blueprint > .corner.br { bottom: -6px; right: -6px; }
+.blueprint > .corner.br::before { right: 0; bottom: 0; top: auto; } .blueprint > .corner.br::after { right: 0; bottom: 0; top: auto; }
+
+.duotone{position:relative;overflow:hidden}
+.duotone::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:var(--color-accent);mix-blend-mode:color}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 55%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-bg); box-shadow: var(--shadow-lg);
+}
+.dialog.blueprint { background: var(--color-bg); }
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* — blueprint frame: components are wireframe objects (see .blueprint
+     and .corner above) — square, transparent, hairline-bordered — */
+.card, .btn, .input, .tag, .seg, .dialog { border-radius: 0; }
+.card, .dialog { background: transparent; border: 1px solid var(--color-divider); }
+.btn { border: 1px solid var(--color-divider); }
+.btn-primary { border-color: var(--color-accent); }
+.btn-ghost { border-color: transparent; }
+
+</style>
+  
+  
+  
+  <script src="assets/asset-00.js"></script>
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-15.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-16.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-17.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-18.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-19.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-15.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-16.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-17.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-18.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/asset-19.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-15.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-16.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-17.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-18.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/asset-19.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-15.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-16.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-17.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-18.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-19.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-20.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-21.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-22.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/asset-23.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-24.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-25.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-26.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/asset-27.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    /* Barlow / Barlow Condensed carry no Cyrillic — route the DS type tokens
+       to Cyrillic-capable industrial faces (condensed heading + legible body). */
+    :root {
+      --font-heading: "Oswald", "Barlow Condensed", system-ui, sans-serif;
+      --font-body: "PT Sans", "Barlow", system-ui, sans-serif;
+      /* Palette re-pointed to the СХМ Агро logo greens (lime + dark forest). */
+      --color-accent: #5aa42f;
+      --color-accent-100: #eef7e4;
+      --color-accent-200: #d7ecc1;
+      --color-accent-300: #b8dd93;
+      --color-accent-400: #93c95f;
+      --color-accent-500: #76b648;
+      --color-accent-600: #5aa42f;
+      --color-accent-700: #3c7a20;
+      --color-accent-800: #2c5c17;
+      --color-accent-900: #1d3f0e;
+      --color-accent-2: #7cb518;
+      --color-accent-2-100: #eef7e4; --color-accent-2-200: #d7ecc1; --color-accent-2-300: #b8dd93;
+      --color-accent-2-400: #93c95f; --color-accent-2-500: #6cae39; --color-accent-2-600: #519a2c;
+      --color-accent-2-700: #3c7a20; --color-accent-2-800: #2c5c17; --color-accent-2-900: #1d3f0e;
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; text-wrap: pretty; background: var(--color-bg); }
+    #sunfield { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+    .page-layer { position: relative; z-index: 1; }
+    .imgcover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+    .ph { position: relative; background:
+      linear-gradient(135deg, var(--color-surface), color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)));
+      display: grid; place-items: center; overflow: hidden; }
+    .ph::before { content:""; position:absolute; inset:0; opacity:.5;
+      background:
+        repeating-linear-gradient(45deg, transparent 0 13px, color-mix(in srgb, var(--color-accent) 10%, transparent) 13px 14px),
+        repeating-linear-gradient(0deg, transparent 0 26px, color-mix(in srgb, var(--color-text) 5%, transparent) 26px 27px); }
+    .ph-lab { position: relative; text-align:center; font-family: var(--font-heading); font-weight:600;
+      text-transform: uppercase; letter-spacing:.06em; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+    .lift { transition: transform .12s ease, box-shadow .12s ease; }
+    .lift:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .navlink {
+      cursor: pointer; position: relative; padding: 8px 4px; font-size: 15px;
+      color: color-mix(in srgb, var(--color-text) 82%, transparent);
+      transition: color .18s ease;
+    }
+    .navlink::after {
+      content: ""; position: absolute; left: 4px; right: 4px; bottom: 2px; height: 2px;
+      background: var(--color-accent); transform: scaleX(0); transform-origin: left;
+      transition: transform .22s ease;
+    }
+    .navlink:hover { color: var(--color-accent-700); }
+    .navlink:hover::after { transform: scaleX(1); }
+    .navlink.is-active { color: var(--color-accent-700); font-weight: 600; }
+    .navlink.is-active::after { transform: scaleX(1); }
+    .nav a.nav-cta, .nav-cta {
+      cursor: pointer; padding: 9px 18px; border-radius: 6px; font-size: 15px; font-weight: 600;
+      color: #fff; background: var(--color-accent);
+      box-shadow: 0 3px 10px color-mix(in srgb, #1d3f0e 22%, transparent);
+      transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+    }
+    .nav a.nav-cta:hover, .nav-cta:hover { color: #fff; background: var(--color-accent-600); transform: translateY(-1px); box-shadow: 0 6px 16px color-mix(in srgb, #1d3f0e 30%, transparent); }
+    .nav a.nav-cta.is-active, .nav-cta.is-active { color: #fff; background: var(--color-accent-700); }
+    .nav-admin { font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+    .nav-admin:hover { color: var(--color-accent-700); }
+    .nav-admin::after { display: none; }
+    @media (max-width: 760px){ .hide-sm{ display:none !important; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+    img, figure, .ph, iframe { max-width: 100%; }
+    * { min-width: 0; }
+    .hero-mobile { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 20px 28px !important; }
+    .hero-mobile h1 { font-size: clamp(32px, 9vw, 44px) !important; }
+    .hero-mobile .text-block { padding: 22px 20px !important; }
+    .hero-mobile .btn { width: 100%; }
+    .grid-stack { grid-template-columns: 1fr !important; gap: 16px !important; }
+    #shm-burger { display: flex !important; align-items: center; }
+    .nav .btn, .nav a[href^="tel"] { display: none !important; }
+    #shm-mobile-menu.open {
+      display: flex !important; flex-direction: column;
+      max-width: 1180px; margin: 8px auto 0; padding: 10px;
+      background: #fff; border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+      border-radius: 14px; box-shadow: 0 10px 30px color-mix(in srgb, #1d3f0e 16%, transparent);
+      position: relative; z-index: 39;
+    }
+    #shm-mobile-menu .mm-link {
+      padding: 14px 16px; font-size: 17px; color: var(--color-text); cursor: pointer;
+      border-radius: 8px; text-decoration: none;
+    }
+    #shm-mobile-menu .mm-link:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); color: var(--color-accent-700); }
+  /* --- производительность на слабых телефонах: отключаем тяжёлые эффекты --- */
+  body::before { background-attachment: scroll !important; filter: saturate(0.45) brightness(1.25) !important; }
+  body::after { display: none !important; }
+  #sunfield { display: none !important; }
+  .text-block, .dialog-backdrop, .nav, #shm-mobile-menu.open { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    }
+  </style>
+</helmet>
+
+<canvas id="sunfield"></canvas>
+<div class="page-layer" style="min-height:100vh;background:transparent">
+
+<nav class="nav" style="position:sticky;top:12px;z-index:40;background:color-mix(in srgb,#ffffff 90%,transparent);backdrop-filter:blur(10px);border:1px solid color-mix(in srgb,var(--color-text) 7%,transparent);border-radius:14px;box-shadow:0 6px 22px color-mix(in srgb,#1d3f0e 12%,transparent);padding:10px 22px;max-width:1180px;margin:12px auto 0">
+  <span class="nav-brand navlink" sc-camel-on-click="{{ goHome }}" style="cursor:pointer;display:flex;align-items:center;gap:10px">
+    <img src="assets/asset-00.png" alt="СХМ Агро" style="width:38px;height:38px;object-fit:contain;display:block">
+    ТОО СХМ Агро
+  </span>
+  <button id="shm-burger" aria-label="Меню" style="display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px;color:var(--color-text)">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="{{ navCatalogCls }} hide-sm" sc-camel-on-click="{{ goCatalog }}">Каталог</a>
+  <a class="navlink hide-sm" sc-camel-on-click="{{ goAbout }}">О компании</a>
+  <a class="{{ navNewsCls }}" sc-camel-on-click="{{ goNews }}">Новости</a>
+  <a class="{{ navContactsCls }}" sc-camel-on-click="{{ goContacts }}">Контакты</a>
+  <a class="navlink hide-sm" href="tel:+77172550000" style="font-family:var(--font-heading);font-weight:600;color:var(--color-text)">+7 7172 55-00-00</a>
+  <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openKP }}">Получить КП</button>
+  <a class="navlink nav-admin hide-sm" sc-camel-on-click="{{ goAdmin }}">Админка</a>
+</nav>
+<div id="shm-mobile-menu" style="display:none">
+  <a class="mm-link" sc-camel-on-click="{{ goCatalog }}">Каталог</a>
+  <a class="mm-link" sc-camel-on-click="{{ goAbout }}">О компании</a>
+  <a class="mm-link" sc-camel-on-click="{{ goNews }}">Новости</a>
+  <a class="mm-link" sc-camel-on-click="{{ goContacts }}">Контакты</a>
+  <a class="mm-link" sc-camel-on-click="{{ goAdmin }}">Админка</a>
+</div>
+
+<!-- ============================= HOME ============================= -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main>
+  <!-- hero -->
+  <section class="hero-mobile" style="max-width:1180px;margin:0 auto;padding:56px 32px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center">
+    <div class="text-block">
+      <span style="display:inline-block;font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--color-accent-700);margin-bottom:14px">Производство · Продажа · Сервис</span>
+      <h1 style="font-size:clamp(40px,5vw,64px);line-height:1.02;text-transform:uppercase;letter-spacing:.01em;margin:0 0 18px">{{ heroTitle }}</h1>
+      <p style="font-size:19px;line-height:1.5;max-width:46ch;margin:0 0 28px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">{{ heroSubtitle }}</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" style="font-size:17px;padding:14px 26px" sc-camel-on-click="{{ goCatalog }}">Каталог техники</button>
+        <button type="button" class="btn btn-secondary" style="font-size:17px;padding:14px 26px" sc-camel-on-click="{{ openKP }}">Получить коммерческое предложение</button>
+      </div>
+    </div>
+    <figure class="blueprint" style="margin:0">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div class="ph" style="aspect-ratio:16/11">
+        <img class="imgcover" src="assets/hero-field.jpg" alt="Сев в поле">
+      </div>
+    </figure>
+  </section>
+
+  <!-- about -->
+  <section style="max-width:1180px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+    <span style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--color-accent-700)">О компании</span>
+    <div class="grid-stack" style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:14px">
+      <h2 style="font-size:34px;text-transform:uppercase;margin:0">18 лет строим технику для казахстанских хозяйств</h2>
+      <div style="font-size:16px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 82%,transparent)">
+        <p>ТОО «СХМ Агро» — производитель и поставщик сельскохозяйственной техники с полным циклом: от литья узлов до сборки и сервисного обслуживания. Мы работаем с фермерами и крупными агрохозяйствами по всей стране.</p>
+        <p>Техника проектируется под реальные условия степи и резко-континентального климата: запас прочности, доступность запчастей и сервис в каждом регионе.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- production -->
+  <section style="max-width:1180px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+    <span style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--color-accent-700)">Собственное производство</span>
+    <h2 style="font-size:34px;text-transform:uppercase;margin:10px 0 22px">Цех, а не перепродажа</h2>
+    <div class="grid-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="ph" style="aspect-ratio:4/3;overflow:hidden"><img src="assets/prod-assembly.jpg" alt="Сборочный цех" style="width:100%;height:100%;object-fit:cover;display:block"></div></figure>
+      <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="ph" style="aspect-ratio:4/3;overflow:hidden"><img src="assets/prod-paint.jpg" alt="Линия покраски" style="width:100%;height:100%;object-fit:cover;display:block"></div></figure>
+      <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="ph" style="aspect-ratio:4/3;overflow:hidden"><img src="assets/prod-testing.jpg" alt="Испытательный полигон" style="width:100%;height:100%;object-fit:cover;display:block"></div></figure>
+    </div>
+    <div class="grid-stack" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div class="blueprint" style="padding:22px 20px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div style="font-family:var(--font-heading);font-weight:600;font-size:44px;line-height:1;color:var(--color-accent-800)">{{ s.v }}</div>
+          <div style="margin-top:8px;font-size:14px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">{{ s.k }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- certificates -->
+  <section style="max-width:1180px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+    <span style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--color-accent-700)">Сертификаты</span>
+    <h2 style="font-size:34px;text-transform:uppercase;margin:10px 0 6px">Соответствие и качество</h2>
+    <p style="margin:0 0 22px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Нажмите на превью, чтобы увеличить.</p>
+    <div class="grid-stack" style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px">
+      <sc-for list="{{ certs }}" as="c" hint-placeholder-count="6">
+        <figure class="blueprint lift" style="margin:0;cursor:pointer" sc-camel-on-click="{{ c.open }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div class="ph" style="aspect-ratio:3/4;overflow:hidden"><img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"></div>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- finance + subsidy banners -->
+  <section style="max-width:1180px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+    <div class="grid-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="blueprint" style="padding:26px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-accent">Лизинг</span>
+        <h3 style="font-size:24px;text-transform:uppercase;margin:14px 0 8px">Работаем через КазАгроФинанс</h3>
+        <p style="font-size:15px;line-height:1.55;margin:0 0 16px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Оформите технику в лизинг с государственной поддержкой. Первоначальный взнос, льготная ставка и понятный график платежей — подайте заявку напрямую.</p>
+        <a class="btn btn-secondary" href="https://kazagro.kz" target="_blank" rel="noopener">Подать заявку на лизинг →</a>
+      </div>
+      <div class="blueprint" style="padding:26px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <span class="tag tag-accent">Субсидии</span>
+        <h3 style="font-size:24px;text-transform:uppercase;margin:14px 0 8px">Субсидируемая техника</h3>
+        <p style="font-size:15px;line-height:1.55;margin:0 0 16px;color:color-mix(in srgb,var(--color-text) 80%,transparent)">Часть нашей техники включена в перечень государственных субсидий. Проверьте актуальный список моделей и условия на портале ГосАгро.</p>
+        <a class="btn btn-secondary" href="https://qoldau.kz" target="_blank" rel="noopener">Перечень на ГосАгро →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- news -->
+  <section style="max-width:1180px;margin:0 auto;padding:40px 32px;border-top:1px solid var(--color-divider);background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+    <div style="display:flex;align-items:baseline;justify-content:space-between">
+      <div><span style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--color-accent-700)">Новости</span>
+      <h2 style="font-size:34px;text-transform:uppercase;margin:10px 0 0">Последнее из хозяйства</h2></div>
+      <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goNews }}">Все новости →</button>
+    </div>
+    <div class="grid-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px">
+      <sc-for list="{{ newsHome }}" as="n" hint-placeholder-count="3">
+        <article class="card lift" style="cursor:pointer;padding:0;overflow:hidden" sc-camel-on-click="{{ n.open }}">
+          <div class="ph" style="aspect-ratio:16/9;overflow:hidden"><img src="{{ n.cover }}" alt="{{ n.title }}" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span class="card-meta">{{ n.date }}</span>
+            <h3 class="card-title" style="font-size:19px">{{ n.title }}</h3>
+            <p class="card-body">{{ n.excerpt }}</p>
+            <span class="btn btn-ghost" style="align-self:flex-start;padding-left:0">Читать →</span>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+</main>
+</sc-if>
+
+<!-- ============================= CATALOG ============================= -->
+<sc-if value="{{ isCatalog }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:1180px;margin:0 auto;padding:36px 32px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+  <h1 style="font-size:40px;text-transform:uppercase;margin:0 0 6px">Каталог техники</h1>
+  <p style="margin:0 0 26px;font-size:16px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Выберите категорию слева. По каждой модели — характеристики и коммерческое предложение.</p>
+  <div style="display:grid;grid-template-columns:230px 1fr;gap:28px;align-items:start">
+    <aside class="blueprint" style="padding:16px;position:sticky;top:88px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:10px">Категории</div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <sc-for list="{{ catFilters }}" as="cf" hint-placeholder-count="5">
+          <button type="button" sc-camel-on-click="{{ cf.pick }}" style="{{ cf.style }}">
+            <span>{{ cf.name }}</span><span style="opacity:.6">{{ cf.count }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </aside>
+    <div>
+      <div style="margin-bottom:14px;font-size:14px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Показано моделей: {{ filteredCount }}</div>
+      <div class="grid-stack" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
+        <sc-for list="{{ filteredModels }}" as="m" hint-placeholder-count="4">
+          <article class="card lift" style="padding:0;overflow:hidden">
+            <div class="ph" style="aspect-ratio:16/10">
+              <sc-if value="{{ m.photo }}" hint-placeholder-val="{{ false }}"><img class="imgcover" src="{{ m.photo }}" alt="{{ m.name }}"></sc-if>
+              <sc-if value="{{ m.noPhoto }}" hint-placeholder-val="{{ true }}"><div class="ph-lab">{{ m.catName }}</div></sc-if>
+              <sc-if value="{{ m.subsidized }}" hint-placeholder-val="{{ false }}"><span class="tag tag-accent" style="position:absolute;top:10px;left:10px">Субсидируется</span></sc-if>
+            </div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:8px;flex:1">
+              <span class="card-kicker">{{ m.catName }}</span>
+              <h3 class="card-title" style="font-size:21px">{{ m.name }}</h3>
+              <p class="card-body">{{ m.short }}</p>
+              <div style="display:flex;gap:10px;margin-top:6px">
+                <button type="button" class="btn btn-primary" sc-camel-on-click="{{ m.open }}">Подробнее</button>
+                <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ m.kp }}">Получить КП</button>
+              </div>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<!-- ============================= MODEL ============================= -->
+<sc-if value="{{ isModel }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:1180px;margin:0 auto;padding:24px 32px 48px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+  <button type="button" class="btn btn-ghost" style="padding-left:0;margin-bottom:16px" sc-camel-on-click="{{ goCatalog }}">← Назад в каталог</button>
+  <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:start">
+    <div>
+      <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="ph" style="aspect-ratio:16/11">
+          <sc-if value="{{ modelPhoto }}" hint-placeholder-val="{{ false }}"><img class="imgcover shm-zoom" src="{{ modelPhoto }}" alt="{{ modelName }}" style="cursor:zoom-in" sc-camel-on-click="{{ openModelPhotoLightbox }}"></sc-if>
+          <sc-if value="{{ modelNoPhoto }}" hint-placeholder-val="{{ true }}"><div class="ph-lab">{{ modelName }} · фото</div></sc-if>
+        </div>
+      </figure>
+      <div class="grid-stack" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px">
+        <sc-if value="{{ modelHasGallery }}" hint-placeholder-val="{{ true }}">
+        <sc-for list="{{ modelGallery }}" as="g" hint-placeholder-count="4">
+        <figure class="blueprint" style="margin:0"><div class="ph" style="aspect-ratio:4/3;overflow:hidden"><img class="shm-zoom" src="{{ g.src }}" alt="{{ g.label }}" style="width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in" sc-camel-on-click="{{ g.open }}"></div></figure>
+        </sc-for>
+        </sc-if>
+      </div>
+    </div>
+    <div>
+      <span class="card-kicker">{{ modelCatName }}</span>
+      <h1 style="font-size:36px;text-transform:uppercase;margin:6px 0 10px">{{ modelName }}</h1>
+      <sc-if value="{{ modelSubsidized }}" hint-placeholder-val="{{ false }}">
+        <div class="blueprint" style="padding:12px 14px;margin:0 0 16px;display:flex;align-items:center;gap:12px;background:var(--color-accent-100)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <span class="tag tag-accent">Субсидируется</span>
+          <span style="font-size:14px">Входит в перечень господдержки — <a href="https://qoldau.kz" target="_blank" rel="noopener">проверить на ГосАгро →</a></span>
+        </div>
+      </sc-if>
+      <p style="font-size:17px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 82%,transparent)">{{ modelDesc }}</p>
+      <div style="display:flex;gap:12px;margin:20px 0 26px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" style="font-size:17px;padding:14px 24px" sc-camel-on-click="{{ openKPModel }}">Получить коммерческое предложение</button>
+        <button type="button" class="btn btn-secondary" style="font-size:17px;padding:14px 24px" sc-camel-on-click="{{ openCall }}">Заказать звонок</button>
+      </div>
+      <h3 style="font-size:20px;text-transform:uppercase;margin:0 0 8px">Технические характеристики</h3>
+      <sc-raw-table class="table">
+        <sc-raw-tbody>
+          <sc-for list="{{ modelSpecs }}" as="row" hint-placeholder-count="6">
+            <sc-raw-tr><sc-raw-td style="width:55%;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ row.k }}</sc-raw-td><sc-raw-td style="font-family:var(--font-heading);font-weight:600">{{ row.v }}</sc-raw-td></sc-raw-tr>
+          </sc-for>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<!-- ============================= NEWS LIST ============================= -->
+<sc-if value="{{ isNews }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:1180px;margin:0 auto;padding:36px 32px 48px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+  <h1 style="font-size:40px;text-transform:uppercase;margin:0 0 26px">Новости и статьи</h1>
+
+  <!-- Featured (large) news item -->
+  <sc-for list="{{ newsFeatured }}" as="n" hint-placeholder-count="1">
+    <article class="card lift grid-stack" style="cursor:pointer;padding:0;overflow:hidden;display:grid;grid-template-columns:1.15fr 1fr;gap:0;margin-bottom:26px" sc-camel-on-click="{{ n.open }}">
+      <div class="ph" style="aspect-ratio:16/10;min-height:260px;overflow:hidden"><img src="{{ n.cover }}" alt="{{ n.title }}" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
+      <div style="padding:30px 32px;display:flex;flex-direction:column;gap:12px;justify-content:center">
+        <span class="tag tag-accent" style="align-self:flex-start">Главная новость</span>
+        <span class="card-meta">{{ n.date }}</span>
+        <h2 class="card-title" style="font-size:28px;line-height:1.12;text-transform:none">{{ n.title }}</h2>
+        <p class="card-body" style="font-size:16px">{{ n.excerpt }}</p>
+        <span class="btn btn-ghost" style="align-self:flex-start;padding-left:0;margin-top:4px">Читать полностью →</span>
+      </div>
+    </article>
+  </sc-for>
+
+  <!-- Smaller news grid below -->
+  <sc-if value="{{ hasNewsRest }}" hint-placeholder-val="{{ true }}">
+    <div class="grid-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+      <sc-for list="{{ newsRest }}" as="n" hint-placeholder-count="3">
+        <article class="card lift" style="cursor:pointer;padding:0;overflow:hidden" sc-camel-on-click="{{ n.open }}">
+          <div class="ph" style="aspect-ratio:16/9;overflow:hidden"><img src="{{ n.cover }}" alt="{{ n.title }}" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <span class="card-meta">{{ n.date }}</span>
+            <h3 class="card-title" style="font-size:19px">{{ n.title }}</h3>
+            <p class="card-body">{{ n.excerpt }}</p>
+            <span class="btn btn-ghost" style="align-self:flex-start;padding-left:0">Читать →</span>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </sc-if>
+</main>
+</sc-if>
+
+<!-- ============================= ARTICLE ============================= -->
+<sc-if value="{{ isArticle }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:760px;margin:0 auto;padding:24px 32px 48px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+  <button type="button" class="btn btn-ghost" style="padding-left:0;margin-bottom:16px" sc-camel-on-click="{{ goNews }}">← Все новости</button>
+  <span class="card-meta">{{ articleDate }}</span>
+  <h1 style="font-size:38px;text-transform:uppercase;line-height:1.05;margin:8px 0 20px">{{ articleTitle }}</h1>
+  <figure class="blueprint" style="margin:0 0 24px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="ph" style="aspect-ratio:16/8;overflow:hidden"><img src="{{ articleCover }}" alt="{{ articleTitle }}" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></div></figure>
+  <div style="font-size:18px;line-height:1.65;color:color-mix(in srgb,var(--color-text) 86%,transparent)">
+    <sc-for list="{{ articleBody }}" as="p" hint-placeholder-count="4">
+      <p style="margin:0 0 18px">{{ p.t }}</p>
+    </sc-for>
+  </div>
+</main>
+</sc-if>
+
+<!-- ============================= CONTACTS ============================= -->
+<sc-if value="{{ isContacts }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:1180px;margin:0 auto;padding:36px 32px 48px;background:color-mix(in srgb, var(--color-bg) 90%, transparent)">
+  <h1 style="font-size:40px;text-transform:uppercase;margin:0 0 26px">Контакты</h1>
+  <div class="grid-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+    <div>
+      <div class="blueprint" style="padding:22px;margin-bottom:16px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:grid;gap:16px;font-size:16px">
+          <div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:2px">Адрес</div>г. Астана, Индустриальная зона, ул. Заводская 7</div>
+          <div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:2px">Телефон</div><a href="tel:+77172550000" style="font-family:var(--font-heading);font-weight:600;font-size:22px">+7 7172 55-00-00</a></div>
+          <div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:2px">E-mail</div><a href="mailto:info@shmagro.kz">info@shmagro.kz</a></div>
+          <div><div style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:color-mix(in srgb,var(--color-text) 55%,transparent);margin-bottom:2px">Часы работы</div>Пн–Пт 8:00–18:00, Сб 9:00–14:00</div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" style="font-size:16px;padding:13px" sc-camel-on-click="{{ openCall }}">Заказать звонок</button>
+      </div>
+      <figure class="blueprint" style="margin:0"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="ph" style="aspect-ratio:16/9;overflow:hidden;position:relative"><iframe src="https://yandex.ru/map-widget/v1/?text=%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%97%D0%B0%D0%B2%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F&z=16" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0" title="Карта проезда СХМ Агро — улица Заводская, Астана"></iframe></div></figure>
+    </div>
+    <div class="blueprint" style="padding:26px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <h2 style="font-size:26px;text-transform:uppercase;margin:0 0 4px">Обратная связь</h2>
+      <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb,var(--color-text) 65%,transparent)">Оставьте сообщение — перезвоним в рабочее время.</p>
+      <form sc-camel-on-submit="{{ submitContact }}" style="display:grid;gap:14px">
+        <div class="field"><label>Ваше имя</label><input class="input" name="c_name" required="" style="min-height:44px;font-size:16px" placeholder="Как к вам обращаться"></div>
+        <div class="field"><label>Телефон</label><input class="input" name="c_phone" required="" style="min-height:44px;font-size:16px" placeholder="+7 ___ ___ __ __"></div>
+        <div class="field"><label>Сообщение</label><textarea class="input" name="c_msg" style="font-size:16px" placeholder="Что вас интересует"></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block" style="font-size:17px;padding:14px">Отправить</button>
+      </form>
+    </div>
+  </div>
+</main>
+</sc-if>
+
+<!-- ============================= FOOTER (public) ============================= -->
+<sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
+<footer class="site-footer" style="margin-top:20px">
+  <div class="grid-stack" style="max-width:1180px;margin:0 auto;padding:40px 32px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px">
+    <div>
+      <div class="nav-brand" style="margin:0 0 10px">ТОО СХМ Агро</div>
+      <p style="font-size:14px;line-height:1.55;max-width:32ch">Производство и продажа сельхозтехники. Астана, Индустриальная зона, ул. Заводская 7.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
+      <div class="footer-label" style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:.08em;margin-bottom:2px">Разделы</div>
+      <a class="navlink" sc-camel-on-click="{{ goCatalog }}">Каталог</a>
+      <a class="navlink" sc-camel-on-click="{{ goAbout }}">О компании</a>
+      <a class="navlink" sc-camel-on-click="{{ goNews }}">Новости</a>
+      <a class="navlink" sc-camel-on-click="{{ goContacts }}">Контакты</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
+      <div class="footer-label" style="font-family:var(--font-heading);font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:.08em;margin-bottom:2px">Контакты</div>
+      <a href="tel:+77172550000">+7 7172 55-00-00</a>
+      <a href="mailto:info@shmagro.kz">info@shmagro.kz</a>
+      <a href="https://kazagro.kz" target="_blank" rel="noopener">КазАгроФинанс</a>
+      <a href="https://qoldau.kz" target="_blank" rel="noopener">ГосАгро (субсидии)</a>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary btn-block" style="margin:0;font-size:15px;padding:13px" sc-camel-on-click="{{ openCall }}">Заказать звонок</button>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <a class="btn btn-secondary btn-icon" href="#" aria-label="Instagram">IG</a>
+        <a class="btn btn-secondary btn-icon" href="#" aria-label="Telegram">TG</a>
+        <a class="btn btn-secondary btn-icon" href="#" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy"><div style="max-width:1180px;margin:0 auto;padding:16px 32px;font-size:13px">© 2026 ТОО «СХМ Агро». Прототип интерфейса.</div></div>
+</footer>
+</sc-if>
+
+<!-- ============================= ADMIN ============================= -->
+<sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+<div style="display:grid;grid-template-columns:220px 1fr;min-height:100vh">
+  <aside style="border-right:1px solid var(--color-divider);padding:20px 14px;background:var(--color-surface)">
+    <div style="font-family:var(--font-heading);font-weight:600;font-size:16px;padding:0 8px 16px;display:flex;align-items:center;gap:8px">
+      <span style="display:inline-grid;place-items:center;width:26px;height:26px;background:var(--color-accent);color:var(--color-bg);font-size:12px">СХМ</span>Админка
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <sc-for list="{{ adminTabs }}" as="t" hint-placeholder-count="4">
+        <button type="button" sc-camel-on-click="{{ t.pick }}" style="{{ t.style }}">{{ t.name }}</button>
+      </sc-for>
+    </div>
+    <button type="button" class="btn btn-ghost" style="margin-top:20px;padding-left:8px" sc-camel-on-click="{{ goHome }}">← На сайт</button>
+  </aside>
+  <div style="padding:28px 32px;background:var(--color-bg)">
+    <!-- admin: catalog -->
+    <sc-if value="{{ adminCatalog }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+        <h1 style="font-size:28px;text-transform:uppercase;margin:0">Каталог техники</h1>
+        <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openAddModel }}">+ Добавить модель</button>
+      </div>
+      <sc-raw-table class="table">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Название</sc-raw-th><sc-raw-th>Категория</sc-raw-th><sc-raw-th>Субсидия</sc-raw-th><sc-raw-th>Статус</sc-raw-th><sc-raw-th style="width:120px"></sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-for list="{{ adminModels }}" as="m" hint-placeholder-count="6">
+            <sc-raw-tr>
+              <sc-raw-td style="font-family:var(--font-heading);font-weight:600">{{ m.name }}</sc-raw-td>
+              <sc-raw-td>{{ m.catName }}</sc-raw-td>
+              <sc-raw-td><sc-if value="{{ m.subsidized }}" hint-placeholder-val="{{ false }}"><span class="tag tag-accent">Да</span></sc-if><sc-if value="{{ m.notSubsidized }}" hint-placeholder-val="{{ true }}"><span class="tag tag-neutral">Нет</span></sc-if></sc-raw-td>
+              <sc-raw-td><span class="tag tag-outline">Опубликовано</span></sc-raw-td>
+              <sc-raw-td style="text-align:right"><button type="button" class="btn btn-ghost" sc-camel-on-click="{{ m.edit }}">Изм.</button><button type="button" class="btn btn-ghost" style="color:var(--color-neutral-700)" sc-camel-on-click="{{ m.del }}">Удал.</button></sc-raw-td>
+            </sc-raw-tr>
+          </sc-for>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </sc-if>
+    <!-- admin: news -->
+    <sc-if value="{{ adminNews }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+        <h1 style="font-size:28px;text-transform:uppercase;margin:0">Новости и статьи</h1>
+        <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openAddNews }}">+ Создать статью</button>
+      </div>
+      <sc-raw-table class="table">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Заголовок</sc-raw-th><sc-raw-th>Дата</sc-raw-th><sc-raw-th>Статус</sc-raw-th><sc-raw-th style="width:120px"></sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-for list="{{ adminNewsList }}" as="n" hint-placeholder-count="3">
+            <sc-raw-tr>
+              <sc-raw-td style="font-family:var(--font-heading);font-weight:600">{{ n.title }}</sc-raw-td>
+              <sc-raw-td>{{ n.date }}</sc-raw-td>
+              <sc-raw-td><span class="tag tag-accent">Опубликовано</span></sc-raw-td>
+              <sc-raw-td style="text-align:right"><button type="button" class="btn btn-ghost" sc-camel-on-click="{{ n.edit }}">Изм.</button><button type="button" class="btn btn-ghost" style="color:var(--color-neutral-700)" sc-camel-on-click="{{ n.del }}">Удал.</button></sc-raw-td>
+            </sc-raw-tr>
+          </sc-for>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </sc-if>
+    <!-- admin: requests -->
+    <sc-if value="{{ adminRequests }}" hint-placeholder-val="{{ false }}">
+      <h1 style="font-size:28px;text-transform:uppercase;margin:0 0 6px">Заявки</h1>
+      <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Входящие запросы на КП и заказы звонка. Меняйте статус по мере обработки.</p>
+      <sc-raw-table class="table">
+        <sc-raw-thead><sc-raw-tr><sc-raw-th>Дата</sc-raw-th><sc-raw-th>Тип</sc-raw-th><sc-raw-th>Имя</sc-raw-th><sc-raw-th>Телефон</sc-raw-th><sc-raw-th>Модель / регион</sc-raw-th><sc-raw-th style="width:150px">Статус</sc-raw-th></sc-raw-tr></sc-raw-thead>
+        <sc-raw-tbody>
+          <sc-for list="{{ requests }}" as="r" hint-placeholder-count="4">
+            <sc-raw-tr>
+              <sc-raw-td>{{ r.date }}</sc-raw-td>
+              <sc-raw-td><span class="{{ r.tagClass }}">{{ r.type }}</span></sc-raw-td>
+              <sc-raw-td style="font-family:var(--font-heading);font-weight:600">{{ r.fio }}</sc-raw-td>
+              <sc-raw-td><a href="{{ r.tel }}">{{ r.phone }}</a></sc-raw-td>
+              <sc-raw-td>{{ r.meta }}</sc-raw-td>
+              <sc-raw-td>
+                <sc-raw-select class="input" style="min-height:34px;padding:4px 8px" value="{{ r.status }}" sc-camel-on-change="{{ r.setStatus }}">
+                  <option value="Новая">Новая</option>
+                  <option value="В работе">В работе</option>
+                  <option value="Обработана">Обработана</option>
+                </sc-raw-select>
+              </sc-raw-td>
+            </sc-raw-tr>
+          </sc-for>
+        </sc-raw-tbody>
+      </sc-raw-table>
+    </sc-if>
+    <!-- admin: settings -->
+    <sc-if value="{{ adminSettings }}" hint-placeholder-val="{{ false }}">
+      <h1 style="font-size:28px;text-transform:uppercase;margin:0 0 18px">Настройки</h1>
+      <div class="grid-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px">
+        <div class="blueprint" style="padding:20px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 14px">Контактные данные</h3>
+          <div style="display:grid;gap:12px">
+            <div class="field"><label>Телефон</label><input class="input" value="+7 7172 55-00-00"></div>
+            <div class="field"><label>E-mail</label><input class="input" value="info@shmagro.kz"></div>
+            <div class="field"><label>Адрес</label><input class="input" value="г. Астана, Индустриальная зона, ул. Заводская 7"></div>
+          </div>
+        </div>
+        <div class="blueprint" style="padding:20px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 14px">Внешние ссылки</h3>
+          <div style="display:grid;gap:12px">
+            <div class="field"><label>КазАгроФинанс (лизинг)</label><input class="input" value="https://kazagro.kz"></div>
+            <div class="field"><label>ГосАгро (субсидии)</label><input class="input" value="https://qoldau.kz"></div>
+          </div>
+        </div>
+        <div class="blueprint" style="padding:20px;grid-column:1 / -1"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <h3 style="font-size:18px;text-transform:uppercase;margin:0 0 14px">Тексты главной</h3>
+          <div class="field" style="margin-bottom:12px"><label>Заголовок героя</label><input class="input" id="set_heroTitle" value="{{ heroTitle }}" sc-camel-on-change="{{ onHeroTitle }}"></div>
+          <div class="field"><label>Подзаголовок</label><textarea class="input" id="set_heroSubtitle" sc-camel-on-change="{{ onHeroSubtitle }}">{{ heroSubtitle }}</textarea></div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" style="margin-top:18px" sc-camel-on-click="{{ saveSettings }}">Сохранить изменения</button>
+    </sc-if>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============================= FLOATING CALL BUTTON ============================= -->
+<sc-if value="{{ showFloat }}" hint-placeholder-val="{{ true }}">
+<button type="button" class="btn btn-primary elev-lg" sc-camel-on-click="{{ openCall }}" style="position:fixed;right:22px;bottom:88px;z-index:45;font-size:16px;padding:15px 22px;box-shadow:var(--shadow-lg);display:none">📞 Заказать звонок</button>
+</sc-if>
+
+<!-- ============================= MODAL: КП ============================= -->
+<sc-if value="{{ modalKP }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:60" sc-camel-on-click="{{ closeModalBg }}">
+  <div class="dialog blueprint" style="width:min(520px,100%)" sc-camel-on-click="{{ stop }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div class="dialog-title">Получить коммерческое предложение</div>
+    <sc-if value="{{ hasModalModel }}" hint-placeholder-val="{{ false }}">
+      <div style="font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Модель: <b style="font-family:var(--font-heading)">{{ modalModelName }}</b></div>
+    </sc-if>
+    <form sc-camel-on-submit="{{ submitKP }}" style="display:grid;gap:14px;margin-top:4px">
+      <div class="field"><label>Ваше имя *</label><input class="input" name="k_name" required="" style="min-height:44px;font-size:16px" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Телефон *</label><input class="input" name="k_phone" required="" style="min-height:44px;font-size:16px" placeholder="+7 ___ ___ __ __"></div>
+      <div class="field"><label>Регион</label>
+        <sc-raw-select class="input" name="k_region" style="min-height:44px;font-size:16px">
+          <option>Акмолинская обл.</option><option>Костанайская обл.</option><option>Северо-Казахстанская обл.</option>
+          <option>Павлодарская обл.</option><option>Актюбинская обл.</option><option>Карагандинская обл.</option>
+          <option>Восточно-Казахстанская обл.</option><option>Алматинская обл.</option><option>Другой регион</option>
+        </sc-raw-select>
+      </div>
+      <div class="field"><label>Комментарий</label><textarea class="input" name="k_comment" style="font-size:16px" placeholder="Комплектация, количество, сроки"></textarea></div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:4px">
+        <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ closeModal }}">Отмена</button>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      </div>
+    </form>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============================= MODAL: CALL ============================= -->
+<sc-if value="{{ modalCall }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:60" sc-camel-on-click="{{ closeModalBg }}">
+  <div class="dialog blueprint" style="width:min(440px,100%)" sc-camel-on-click="{{ stop }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div class="dialog-title">Заказать звонок</div>
+    <div class="dialog-body">Оставьте имя и телефон — перезвоним в течение рабочего дня.</div>
+    <form sc-camel-on-submit="{{ submitCall }}" style="display:grid;gap:14px;margin-top:4px">
+      <div class="field"><label>Ваше имя *</label><input class="input" name="cb_name" required="" style="min-height:44px;font-size:16px" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label>Телефон *</label><input class="input" name="cb_phone" required="" style="min-height:44px;font-size:16px" placeholder="+7 ___ ___ __ __"></div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:4px">
+        <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ closeModal }}">Отмена</button>
+        <button type="submit" class="btn btn-primary">Жду звонка</button>
+      </div>
+    </form>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============================= MODAL: ADD (admin) ============================= -->
+<sc-if value="{{ modalAdd }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:60" sc-camel-on-click="{{ closeModalBg }}">
+  <div class="dialog blueprint" style="width:min(520px,100%)" sc-camel-on-click="{{ stop }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div class="dialog-title">{{ addTitle }}</div>
+    <form sc-camel-on-submit="{{ submitAdd }}" style="display:grid;gap:14px;margin-top:4px">
+      <div class="field"><label>{{ addLabel }}</label><input class="input" name="a_title" required="" style="min-height:44px;font-size:16px"></div>
+      <sc-if value="{{ addIsModel }}" hint-placeholder-val="{{ true }}">
+        <div class="field"><label>Категория</label>
+          <sc-raw-select class="input" name="a_cat" style="min-height:44px">
+            <option value="traktory">Тракторы</option><option value="kombayny">Комбайны</option>
+            <option value="posev">Посевная техника</option><option value="pochva">Почвообрабатывающая</option>
+          </sc-raw-select>
+        </div>
+        <label class="radio"><input type="checkbox" name="a_sub"><span class="dot"></span>Субсидируется</label>
+      </sc-if>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:4px">
+        <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ closeModal }}">Отмена</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============================= CERT LIGHTBOX ============================= -->
+<sc-if value="{{ certOpen }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:60" sc-camel-on-click="{{ closeCert }}">
+  <figure class="blueprint" style="margin:0;width:min(760px,92vw)" sc-camel-on-click="{{ stop }}"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div class="ph" style="background:var(--color-bg);overflow:hidden"><img src="{{ certImg }}" alt="{{ certTitle }}" style="width:100%;height:auto;display:block"></div>
+    <figcaption style="padding:10px 12px;background:var(--color-surface);display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px">{{ certTitle }}</span><button type="button" class="btn btn-ghost" sc-camel-on-click="{{ closeCert }}">Закрыть ✕</button></figcaption>
+  </figure>
+</div>
+</sc-if>
+
+<!-- ============================= MODEL IMAGE LIGHTBOX ============================= -->
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:80" sc-camel-on-click="{{ closeLightbox }}">
+  <div style="width:min(980px,94vw);display:grid;gap:12px" sc-camel-on-click="{{ stop }}">
+    <div style="display:flex;justify-content:flex-end">
+      <button type="button" class="btn btn-ghost" style="background:var(--color-bg);border-color:var(--color-divider)" sc-camel-on-click="{{ closeLightbox }}">✕ Закрыть</button>
+    </div>
+    <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px">
+      <button type="button" class="btn btn-ghost" style="padding:10px 14px" sc-camel-on-click="{{ prevLightbox }}">←</button>
+      <figure class="blueprint" style="margin:0;overflow:hidden;background:var(--color-bg)"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="ph" style="background:var(--color-bg);overflow:hidden"><img src="{{ lightboxCurrentSrc }}" alt="{{ lightboxCurrentAlt }}" style="width:100%;max-height:80vh;object-fit:contain;display:block"></div>
+      </figure>
+      <button type="button" class="btn btn-ghost" style="padding:10px 14px" sc-camel-on-click="{{ nextLightbox }}">→</button>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;background:color-mix(in srgb,var(--color-bg) 90%, transparent);border:1px solid var(--color-divider);border-radius:var(--radius-md)">
+      <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 78%,transparent)">{{ lightboxCurrentLabel }}</span>
+      <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ lightboxIndexLabel }}</span>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ============================= TOAST ============================= -->
+<sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+<div class="blueprint elev-lg" style="position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:80;background:var(--color-accent-800);color:var(--color-bg);padding:14px 22px;box-shadow:var(--shadow-lg);font-family:var(--font-heading);font-weight:600">
+  <i class="corner tl" style="color:var(--color-bg)"></i><i class="corner tr" style="color:var(--color-bg)"></i><i class="corner bl" style="color:var(--color-bg)"></i><i class="corner br" style="color:var(--color-bg)"></i>
+  ✓ {{ toast }}
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = {
+    page: 'home', cat: 'all', modelId: null, articleId: null,
+    modal: null, modalModelId: null, addKind: null, certIdx: null,
+    lightboxOpen: false, lightboxImages: [], lightboxIndex: 0, lightboxTitle: '',
+    heroTitle: 'Сельхозтехника, сделанная для степи',
+    heroSubtitle: 'Собственное производство тракторов, комбайнов и посевных комплексов в Казахстане.',
+    adminTab: 'catalog', toast: null,
+    models: [
+      { id:'t2204', name:'Трактор СХМ-2204', cat:'traktory', photo:'assets/t2204-main.jpg', gallery:['assets/t2204-side.jpg','assets/t2204-rear.jpg','assets/t2204-cabin.jpg','assets/t2204-work.jpg'], short:'Мощный колёсный трактор 220 л.с. для тяжёлых полевых работ.', subsidized:true,
+        desc:'Универсальный колёсный трактор тягового класса 5 для основной обработки почвы, посева и транспортных работ. Двигатель с турбонаддувом, комфортная кабина с кондиционером и малошумной изоляцией. Рассчитан на интенсивную эксплуатацию в условиях резко-континентального климата.',
+        specs:[{k:'Мощность двигателя',v:'220 л.с.'},{k:'Тяговый класс',v:'5'},{k:'Тип привода',v:'4×4'},{k:'Объём двигателя',v:'6,7 л'},{k:'Коробка передач',v:'16 / 8, синхро'},{k:'Грузоподъёмность навески',v:'8 200 кг'},{k:'Ёмкость бака',v:'340 л'},{k:'Масса',v:'8 400 кг'}] },
+      { id:'t1523', name:'Трактор СХМ-1523', cat:'traktory', photo:'assets/t1523-main.jpg', gallery:['assets/t1523-side.jpg','assets/t1523-rear.jpg','assets/t1523-cabin.jpg','assets/t1523-work.jpg'], short:'Универсальный трактор 150 л.с. для средних хозяйств.', subsidized:false,
+        desc:'Надёжный трактор среднего класса для повседневных работ в фермерском хозяйстве: обработка почвы, посев, работа с прицепным оборудованием. Простое обслуживание и доступные запчасти.',
+        specs:[{k:'Мощность двигателя',v:'150 л.с.'},{k:'Тяговый класс',v:'3'},{k:'Тип привода',v:'4×4'},{k:'Объём двигателя',v:'4,8 л'},{k:'Коробка передач',v:'12 / 12'},{k:'Грузоподъёмность навески',v:'5 500 кг'},{k:'Ёмкость бака',v:'220 л'},{k:'Масса',v:'5 900 кг'}] },
+      { id:'k760', name:'Зерноуборочный комбайн СХМ-Есіл 760', cat:'kombayny', photo:'assets/k760-main.jpg', gallery:['assets/k760-front.jpg','assets/k760-angle.jpg','assets/k760-cabin.jpg','assets/k760-work.jpg'], short:'Высокопроизводительный комбайн для уборки зерновых.', subsidized:true,
+        desc:'Комбайн классической схемы с барабанной молотилкой для уборки зерновых, зернобобовых и масличных культур. Большой бункер и надёжная система очистки обеспечивают высокую производительность при минимальных потерях.',
+        specs:[{k:'Мощность двигателя',v:'330 л.с.'},{k:'Ширина захвата жатки',v:'7,0 м'},{k:'Объём бункера',v:'9 000 л'},{k:'Система обмолота',v:'барабанная'},{k:'Площадь очистки',v:'5,2 м²'},{k:'Выгрузка зерна',v:'90 л/с'},{k:'Ёмкость бака',v:'640 л'},{k:'Масса',v:'14 800 кг'}] },
+      { id:'sz54', name:'Сеялка зерновая СХМ-СЗ-5,4', cat:'posev', photo:'assets/sz54-main.jpg', gallery:['assets/sz54-side.jpg','assets/sz54-closeup.jpg','assets/sz54-cabin.jpg','assets/sz54-work.jpg'], short:'Прицепная зерновая сеялка с шириной захвата 5,4 м.', subsidized:true,
+        desc:'Механическая зерновая сеялка для рядового посева зерновых и зернобобовых с одновременным внесением удобрений. Точная норма высева и равномерная глубина заделки семян.',
+        specs:[{k:'Ширина захвата',v:'5,4 м'},{k:'Число сошников',v:'36'},{k:'Междурядье',v:'15 см'},{k:'Ёмкость бункера',v:'1 200 л'},{k:'Норма высева',v:'6–350 кг/га'},{k:'Рабочая скорость',v:'до 12 км/ч'},{k:'Требуемая мощность',v:'от 120 л.с.'},{k:'Масса',v:'2 400 кг'}] },
+      { id:'pk96', name:'Посевной комплекс СХМ-ПК-9,6', cat:'posev', photo:'assets/pk96-main.jpg', gallery:['assets/pk96-front.jpg','assets/pk96-angle.jpg','assets/pk96-cabin.jpg','assets/pk96-work.jpg'], short:'Широкозахватный посевной комплекс для больших площадей.', subsidized:false,
+        desc:'Пневматический посевной комплекс для ресурсосберегающих технологий: посев по стерне, минимальная и нулевая обработка. Высокая производительность за счёт большой ширины захвата и вместительного бункера.',
+        specs:[{k:'Ширина захвата',v:'9,6 м'},{k:'Тип высева',v:'пневматический'},{k:'Ёмкость бункера',v:'5 000 л'},{k:'Междурядье',v:'19 см'},{k:'Норма высева',v:'2–400 кг/га'},{k:'Рабочая скорость',v:'до 14 км/ч'},{k:'Требуемая мощность',v:'от 250 л.с.'},{k:'Масса',v:'6 900 кг'}] },
+      { id:'bdm44', name:'Борона дисковая СХМ-БДМ-4×4', cat:'pochva', photo:'assets/borona-bdm.jpg', gallery:['assets/borona-front.jpg','assets/borona-angle.jpg','assets/borona-cabin.jpg','assets/borona-work.jpg'], short:'Дисковая борона для лущения стерни и обработки почвы.', subsidized:false,
+        desc:'Прицепная дисковая борона для поверхностной обработки почвы, лущения стерни и заделки пожнивных остатков. Индивидуальные стойки дисков и регулируемый угол атаки.',
+        specs:[{k:'Ширина захвата',v:'4,0 м'},{k:'Число дисков',v:'32'},{k:'Диаметр диска',v:'560 мм'},{k:'Глубина обработки',v:'до 15 см'},{k:'Рабочая скорость',v:'до 15 км/ч'},{k:'Требуемая мощность',v:'от 140 л.с.'},{k:'Производительность',v:'до 4,5 га/ч'},{k:'Масса',v:'3 100 кг'}] },
+    ],
+    cats: [
+      { id:'traktory', name:'Тракторы' },
+      { id:'kombayny', name:'Комбайны' },
+      { id:'posev', name:'Посевная техника' },
+      { id:'pochva', name:'Почвообрабатывающая' },
+    ],
+    news: [
+      { id:'n1', date:'8 июля 2026', title:'СХМ Агро расширяет производство в Костанайской области', excerpt:'Новый сборочный корпус увеличит выпуск тракторов серии 2200 на 40% уже в этом сезоне.', cover:'assets/news-1.jpg',
+        body:['ТОО «СХМ Агро» запускает новый сборочный корпус площадью 12 000 м² в индустриальной зоне Костанайской области. Это позволит увеличить годовой выпуск тракторов серии 2200 на 40% и сократить сроки поставки техники в северные регионы страны.','На новой линии предусмотрены современные посты сборки, покраски и предпродажной подготовки. Дополнительно создаётся более 120 рабочих мест для местных специалистов.','Расширение производства — часть стратегии по локализации сельхозмашиностроения в Казахстане и снижению зависимости хозяйств от импортной техники.'] },
+      { id:'n2', date:'24 июня 2026', title:'Обновлённая линейка тракторов серии 2200: что изменилось', excerpt:'Новая кабина, экономичный двигатель и улучшенная гидравлика — разбираем обновления.', cover:'assets/news-2.jpg',
+        body:['Инженеры СХМ Агро представили обновлённую серию тракторов 2200. Главное изменение — новая кабина с улучшенной шумоизоляцией, эргономичным пультом управления и климат-контролем.','Двигатель получил обновлённую топливную систему, которая снижает расход горючего до 8% при тех же тяговых характеристиках. Гидравлическая система теперь обеспечивает более плавную работу навесного оборудования.','Обновлённые модели уже доступны для заказа. Действующим клиентам доступна программа обмена с зачётом стоимости старой техники.'] },
+      { id:'n3', date:'11 июня 2026', title:'Как получить субсидию на технику в 2026 году: пошаговый разбор', excerpt:'Собрали понятную инструкцию: какие модели субсидируются и какие документы нужны.', cover:'assets/news-3.jpg',
+        body:['Государство компенсирует часть стоимости сельхозтехники, включённой в перечень субсидируемой. Разбираем, как воспользоваться поддержкой без лишней бюрократии.','Шаг первый — убедитесь, что выбранная модель входит в перечень на портале ГосАгро. Вся субсидируемая техника СХМ Агро отмечена соответствующим знаком в каталоге.','Шаг второй — подготовьте документы на хозяйство и подайте заявку. Наши менеджеры помогают с оформлением и подскажут, как совместить субсидию с лизингом через КазАгроФинанс.'] },
+      { id:'n4', date:'2 июня 2026', title:'Открыт новый сервисный центр в Акмолинской области', excerpt:'Теперь плановое ТО и ремонт техники доступны ближе к хозяйствам северного региона.', cover:'assets/news-4.jpg',
+        body:['ТОО «СХМ Агро» открыло сервисный центр в Акмолинской области. Центр оснащён современным диагностическим оборудованием и складом оригинальных запчастей.','Клиентам доступны плановое техническое обслуживание, гарантийный и постгарантийный ремонт, а также выездная сервисная бригада для работы прямо в поле в период посевной и уборочной.','Расширение сервисной сети — часть стратегии компании обеспечить доступность обслуживания в каждом аграрном регионе Казахстана.'] },
+      { id:'n5', date:'20 мая 2026', title:'СХМ Агро на выставке AgriTech Astana 2026', excerpt:'Показали обновлённые комбайны и посевные комплексы, провели встречи с фермерами.', cover:'assets/news-5.jpg',
+        body:['Компания приняла участие в аграрной выставке AgriTech Astana 2026. На стенде были представлены зерноуборочный комбайн Есіл-760 и широкозахватный посевной комплекс ПК-9,6.','Посетители смогли вживую оценить технику, обсудить условия поставки, лизинга и субсидирования с представителями компании.','По итогам выставки заключён ряд предварительных договорённостей с хозяйствами из северных и центральных регионов страны.'] },
+      { id:'n6', date:'6 мая 2026', title:'Программа trade-in: меняем старую технику на новую', excerpt:'Запускаем зачёт стоимости старой техники при покупке новых моделей СХМ Агро.', cover:'assets/news-6.jpg',
+        body:['СХМ Агро запускает программу trade-in для действующих клиентов. Стоимость вашей старой техники будет учтена при покупке новой модели из каталога.','Оценка проводится бесплатно, специалисты компании выезжают на место. Условия программы можно совместить с лизингом и государственным субсидированием.','Программа действует на ограниченный модельный ряд — актуальные условия уточняйте у менеджеров.'] },
+    ],
+    certs: [
+      { title:'Сертификат соответствия ЕАЭС', org:'ТР ТС 010/2011', img:'assets/cert-1.jpg' },
+      { title:'Сертификат ISO 9001:2015', org:'Система менеджмента качества', img:'assets/cert-2.jpg' },
+      { title:'Декларация о соответствии', org:'Тракторы серии 2200', img:'assets/cert-3.jpg' },
+      { title:'Сертификат ISO 14001', org:'Экологический менеджмент', img:'assets/cert-4.jpg' },
+      { title:'Сертификат СТ-KZ', org:'Казахстанское содержание', img:'assets/cert-5.jpg' },
+      { title:'Гарантийный сертификат', org:'Сервисная сеть 34 центра', img:'assets/cert-6.jpg' },
+    ],
+    requests: [
+      { id:'r1', date:'14.07.2026', type:'КП', fio:'Ерлан Смагулов', phone:'+7 701 234 56 78', meta:'Трактор СХМ-2204 · Акмолинская обл.', status:'Новая' },
+      { id:'r2', date:'14.07.2026', type:'Звонок', fio:'Айгуль Нурланова', phone:'+7 705 987 65 43', meta:'—', status:'В работе' },
+      { id:'r3', date:'13.07.2026', type:'КП', fio:'Виктор Ким', phone:'+7 777 111 22 33', meta:'Комбайн СХМ-Есіл 760 · Костанайская обл.', status:'Обработана' },
+      { id:'r4', date:'12.07.2026', type:'КП', fio:'Даурен Оспанов', phone:'+7 702 555 44 33', meta:'Сеялка СХМ-СЗ-5,4 · СКО', status:'Новая' },
+    ],
+    stats: [
+      { v:'18', k:'лет на рынке' },
+      { v:'12 400+', k:'единиц техники выпущено' },
+      { v:'34', k:'дилерских центра' },
+      { v:'860', k:'сотрудников' },
+    ],
+  };
+
+  go(page, extra) { this.setState({ page, modal:null, ...(extra||{}) }); window.scrollTo(0,0); }  showToast(msg) { this.setState({ toast: msg }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ toast:null }), 2600); }
+  componentDidMount() {
+    this._onLightboxKey = (e) => {
+      if (!this.state.lightboxOpen) return;
+      if (e.key === 'Escape') {
+        this.closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        this.prevLightbox();
+      } else if (e.key === 'ArrowRight') {
+        this.nextLightbox();
+      }
+    };
+    window.addEventListener('keydown', this._onLightboxKey);
+
+    const cv = document.getElementById('sunfield');
+    if (!cv) return;
+    if (window.matchMedia('(max-width: 760px)').matches) return;
+    const ctx = cv.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let W = 0, H = 0;
+    const mouse = { x: -1e4, y: -1e4, active: false };
+    const STEP = 46;
+    const build = () => {
+      W = cv.clientWidth; H = cv.clientHeight;
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    const onMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true; };
+    const onLeave = () => { mouse.active = false; mouse.x = mouse.y = -1e4; };
+    let raf, t = 0;
+    const frame = () => {
+      t += 0.006;
+      ctx.clearRect(0, 0, W, H);
+      const drift = (t * 7) % STEP;
+      // тонкие линии сетки
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(90,164,47,0.10)';
+      for (let x = drift; x < W; x += STEP) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+      for (let y = 0; y < H; y += STEP) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+      // светящиеся узлы в пересечениях (пульсация + подсветка у курсора)
+      for (let x = drift; x < W; x += STEP) {
+        for (let y = 0; y < H; y += STEP) {
+          const pulse = (Math.sin(x * 0.045 + t * 2) + Math.cos(y * 0.045 + t * 1.5)) * 0.5;
+          let a = pulse > 0.25 ? (pulse - 0.25) * 0.55 : 0;
+          let r = 2.2;
+          if (mouse.active) {
+            const dx = x - mouse.x, dy = y - mouse.y, dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 140) { const g = 1 - dist / 140; a = Math.min(0.75, a + g * 0.55); r = 2.2 + g * 2.4; }
+          }
+          if (a > 0.02) {
+            const grd = ctx.createRadialGradient(x, y, 0, x, y, r * 3);
+            grd.addColorStop(0, `rgba(120,182,72,${a})`);
+            grd.addColorStop(1, 'rgba(120,182,72,0)');
+            ctx.fillStyle = grd;
+            ctx.beginPath(); ctx.arc(x, y, r * 3, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = `rgba(90,164,47,${Math.min(0.9, a + 0.15)})`;
+            ctx.beginPath(); ctx.arc(x, y, r * 0.55, 0, Math.PI * 2); ctx.fill();
+          }
+        }
+      }
+      raf = requestAnimationFrame(frame);
+    };
+    build(); frame();
+    window.addEventListener('resize', build);
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerleave', onLeave);
+    this._cleanup = () => { cancelAnimationFrame(raf); window.removeEventListener('resize', build); window.removeEventListener('pointermove', onMove); window.removeEventListener('pointerleave', onLeave); };
+  }
+  componentWillUnmount() {
+    if (this._cleanup) this._cleanup();
+    if (this._onLightboxKey) window.removeEventListener('keydown', this._onLightboxKey);
+  }
+
+  catName(id) { const c = this.state.cats.find(c => c.id === id); return c ? c.name : ''; }
+  openLightbox(images, index) {
+    const items = (images || []).map(x => ({ ...x }));
+    if (!items.length) return;
+    const safeIndex = Math.max(0, Math.min(index || 0, items.length - 1));
+    this.setState({ lightboxOpen: true, lightboxImages: items, lightboxIndex: safeIndex, lightboxTitle: items[safeIndex].label || '' });
+  }
+  closeLightbox() {
+    this.setState({ lightboxOpen: false, lightboxImages: [], lightboxIndex: 0, lightboxTitle: '' });
+  }
+  prevLightbox() {
+    const items = this.state.lightboxImages || [];
+    if (!items.length) return;
+    const nextIndex = (this.state.lightboxIndex || 0) - 1;
+    const safeIndex = nextIndex < 0 ? items.length - 1 : nextIndex;
+    this.setState({ lightboxIndex: safeIndex, lightboxTitle: items[safeIndex].label || '' });
+  }
+  nextLightbox() {
+    const items = this.state.lightboxImages || [];
+    if (!items.length) return;
+    const nextIndex = (this.state.lightboxIndex || 0) + 1;
+    const safeIndex = nextIndex >= items.length ? 0 : nextIndex;
+    this.setState({ lightboxIndex: safeIndex, lightboxTitle: items[safeIndex].label || '' });
+  }
+
+  asset(path) {
+    if (!path) return path;
+    const map = { 'assets/tractor-green.jpg':'tractorGreen', 'assets/combine-torum.jpg':'combineTorum', 'assets/hero-field.jpg':'heroField', 'assets/hero-bg.jpg':'heroBg' };
+    const R = (typeof window !== 'undefined' && window.__resources) || {};
+    const id = map[path];
+    return (id && R[id]) ? R[id] : path;
+  }
+
+  renderVals() {
+    const st = this.state;
+    const page = st.page;
+    const model = st.models.find(m => m.id === st.modelId);
+    const article = st.news.find(n => n.id === st.articleId);
+    const filtered = st.cat === 'all' ? st.models : st.models.filter(m => m.cat === st.cat);
+    const isPublic = page !== 'admin';
+
+    const tabBtn = (active) => 'text-align:left;cursor:pointer;font-family:var(--font-heading);font-weight:600;font-size:15px;padding:10px 12px;border:1px solid ' +
+      (active ? 'var(--color-accent)' : 'transparent') + ';background:' + (active ? 'var(--color-accent)' : 'transparent') +
+      ';color:' + (active ? 'var(--color-bg)' : 'var(--color-text)') + ';border-radius:0';
+
+    const catBtn = (active) => 'display:flex;justify-content:space-between;align-items:center;text-align:left;cursor:pointer;font-family:var(--font-heading);font-weight:600;font-size:15px;padding:9px 11px;border:1px solid ' +
+      (active ? 'var(--color-accent)' : 'transparent') + ';background:' + (active ? 'var(--color-accent)' : 'transparent') +
+      ';color:' + (active ? 'var(--color-bg)' : 'var(--color-text)') + ';border-radius:0';
+
+    const modelNameText = model ? model.name : '';
+    const modelPhotoSrc = model && model.photo ? this.asset(model.photo) : '';
+    const modelLightboxImages = [];
+    if (modelPhotoSrc) modelLightboxImages.push({ src:modelPhotoSrc, label:modelNameText || 'Фото модели' });
+    (model && model.gallery ? model.gallery : []).forEach((g,i) => {
+      modelLightboxImages.push({ src:this.asset(g), label:(model && model.name ? model.name : 'Фото') + ' — вид ' + (i+2) });
+    });
+    const lightboxImages = st.lightboxImages || [];
+    const currentLightboxItem = lightboxImages[st.lightboxIndex || 0] || null;
+
+    return {
+      // routing flags
+      isHome: page === 'home', isCatalog: page === 'catalog', isModel: page === 'model',
+      isNews: page === 'news', isArticle: page === 'article', isContacts: page === 'contacts',
+      isAdmin: page === 'admin',
+      navCatalogCls: (page === 'catalog' || page === 'model') ? 'nav-cta is-active' : 'nav-cta',
+      navNewsCls: (page === 'news' || page === 'article') ? 'navlink hide-sm is-active' : 'navlink hide-sm',
+      navContactsCls: page === 'contacts' ? 'navlink hide-sm is-active' : 'navlink hide-sm',
+      showFooter: isPublic, showFloat: isPublic,
+
+      // nav
+      goHome: () => this.go('home'), goCatalog: () => this.go('catalog'),
+      goAbout: () => this.go('home', {}), goNews: () => this.go('news'),
+      goContacts: () => this.go('contacts'), goAdmin: () => this.go('admin'),
+
+      // home data
+      stats: st.stats,
+      heroTitle: st.heroTitle,
+      heroSubtitle: st.heroSubtitle,
+      newsHome: st.news.slice(0,3).map(n => ({ ...n, open: () => this.go('article', { articleId:n.id }) })),
+      certs: st.certs.map((c,i) => ({ ...c, open: () => this.setState({ certIdx:i }) })),
+
+      // catalog
+      catFilters: [{ id:'all', name:'Вся техника', count:st.models.length }].concat(
+        st.cats.map(c => ({ id:c.id, name:c.name, count: st.models.filter(m=>m.cat===c.id).length }))
+      ).map(c => ({ name:c.name, count:c.count, style: catBtn(st.cat===c.id), pick: () => this.setState({ cat:c.id }) })),
+      filteredCount: filtered.length,
+      filteredModels: filtered.map(m => ({ ...m, catName:this.catName(m.cat), photo: this.asset(m.photo), noPhoto: !m.photo,
+        open: () => this.go('model', { modelId:m.id }),
+        kp: () => this.setState({ modal:'kp', modalModelId:m.id }) })),
+
+      // model
+      modelName: model ? model.name : '', modelCatName: model ? this.catName(model.cat) : '',
+      modelPhoto: modelPhotoSrc, modelNoPhoto: !(model && model.photo),
+      modelGallery: modelLightboxImages.slice(1).map((g,i) => ({ ...g, open: () => this.openLightbox(modelLightboxImages, i+1) })),
+      modelHasGallery: modelLightboxImages.length > 1,
+      openModelPhotoLightbox: () => this.openLightbox(modelLightboxImages, 0),
+      modelDesc: model ? model.desc : '', modelSpecs: model ? model.specs : [],
+      modelSubsidized: !!(model && model.subsidized),
+      openKPModel: () => this.setState({ modal:'kp', modalModelId: st.modelId }),
+
+      // news / article
+      news: st.news.map(n => ({ ...n, open: () => this.go('article', { articleId:n.id }) })),
+      newsFeatured: st.news.slice(0,1).map(n => ({ ...n, open: () => this.go('article', { articleId:n.id }) })),
+      newsRest: st.news.slice(1).map(n => ({ ...n, open: () => this.go('article', { articleId:n.id }) })),
+      hasNewsRest: st.news.length > 1,
+      articleTitle: article ? article.title : '', articleDate: article ? article.date : '',
+      articleCover: article ? article.cover : '',
+      articleBody: article ? article.body.map(t => ({ t })) : [],
+
+      // modals
+      openKP: () => this.setState({ modal:'kp', modalModelId:null }),
+      openCall: () => this.setState({ modal:'call' }),
+      closeModal: () => this.setState({ modal:null }),
+      closeModalBg: () => this.setState({ modal:null }),
+      stop: (e) => e.stopPropagation(),
+      modalKP: st.modal === 'kp', modalCall: st.modal === 'call', modalAdd: st.modal === 'add',
+      hasModalModel: !!st.modalModelId,
+      modalModelName: (() => { const m = st.models.find(x=>x.id===st.modalModelId); return m ? m.name : ''; })(),
+
+      submitKP: (e) => { e.preventDefault(); const f=e.target;
+        const m = st.models.find(x=>x.id===st.modalModelId);
+        const meta = (m ? m.name : 'Общая заявка') + ' · ' + (f.k_region.value||'—');
+        const rq = { id:'r'+Date.now(), date:this.today(), type:'КП', fio:f.k_name.value, phone:f.k_phone.value, meta, status:'Новая' };
+        this.setState({ requests:[rq, ...st.requests], modal:null });
+        this.showToast('Заявка на КП отправлена. Мы свяжемся с вами.'); },
+      submitCall: (e) => { e.preventDefault(); const f=e.target;
+        const rq = { id:'r'+Date.now(), date:this.today(), type:'Звонок', fio:f.cb_name.value, phone:f.cb_phone.value, meta:'—', status:'Новая' };
+        this.setState({ requests:[rq, ...st.requests], modal:null });
+        this.showToast('Заявка на звонок принята. Скоро перезвоним.'); },
+      submitContact: (e) => { e.preventDefault(); const f=e.target;
+        const rq = { id:'r'+Date.now(), date:this.today(), type:'Звонок', fio:f.c_name.value, phone:f.c_phone.value, meta:'Обратная связь', status:'Новая' };
+        this.setState({ requests:[rq, ...st.requests] }); f.reset();
+        this.showToast('Сообщение отправлено. Спасибо!'); },
+
+      // cert lightbox
+      certOpen: st.certIdx !== null,
+      certTitle: st.certIdx !== null ? st.certs[st.certIdx].title : '',
+      certImg: st.certIdx !== null ? st.certs[st.certIdx].img : '',
+      certOrg: st.certIdx !== null ? st.certs[st.certIdx].org : '',
+      closeCert: () => this.setState({ certIdx:null }),
+
+      // model image lightbox
+      lightboxOpen: !!st.lightboxOpen,
+      lightboxCurrentSrc: currentLightboxItem ? currentLightboxItem.src : '',
+      lightboxCurrentAlt: currentLightboxItem ? (currentLightboxItem.label || 'Фото') : '',
+      lightboxCurrentLabel: currentLightboxItem ? currentLightboxItem.label || '' : '',
+      lightboxIndexLabel: lightboxImages.length ? String((st.lightboxIndex || 0) + 1) + ' / ' + lightboxImages.length : '',
+      closeLightbox: () => this.closeLightbox(),
+      prevLightbox: () => this.prevLightbox(),
+      nextLightbox: () => this.nextLightbox(),
+
+      // toast
+      hasToast: !!st.toast, toast: st.toast,
+
+      // ===== admin =====
+      adminTabs: [
+        { id:'catalog', name:'Каталог' }, { id:'news', name:'Новости' },
+        { id:'requests', name:'Заявки' }, { id:'settings', name:'Настройки' },
+      ].map(t => ({ name: t.name + (t.id==='requests' ? ' ('+st.requests.filter(r=>r.status==='Новая').length+')' : ''),
+        style: tabBtn(st.adminTab===t.id), pick: () => this.setState({ adminTab:t.id }) })),
+      adminCatalog: st.adminTab==='catalog', adminNews: st.adminTab==='news',
+      adminRequests: st.adminTab==='requests', adminSettings: st.adminTab==='settings',
+
+      adminModels: st.models.map(m => ({ name:m.name, catName:this.catName(m.cat),
+        subsidized:m.subsidized, notSubsidized:!m.subsidized,
+        edit: () => this.showToast('Открыта карточка: '+m.name),
+        del: () => { if(confirm('Удалить модель «'+m.name+'»?')) { this.setState({ models: st.models.filter(x=>x.id!==m.id) }); this.showToast('Модель удалена'); } } })),
+      adminNewsList: st.news.map(n => ({ title:n.title, date:n.date,
+        edit: () => this.showToast('Редактирование: '+n.title),
+        del: () => { if(confirm('Удалить статью?')) { this.setState({ news: st.news.filter(x=>x.id!==n.id) }); this.showToast('Статья удалена'); } } })),
+      requests: st.requests.map(r => ({ ...r, tel:'tel:'+r.phone.replace(/\s/g,''),
+        tagClass: r.type==='КП' ? 'tag tag-accent' : 'tag tag-outline',
+        setStatus: (e) => { const v=e.target.value; this.setState({ requests: st.requests.map(x=>x.id===r.id?{...x,status:v}:x) }); } })),
+
+      openAddModel: () => this.setState({ modal:'add', addKind:'model' }),
+      openAddNews: () => this.setState({ modal:'add', addKind:'news' }),
+      addIsModel: st.addKind === 'model',
+      addTitle: st.addKind === 'model' ? 'Новая модель техники' : 'Новая статья',
+      addLabel: st.addKind === 'model' ? 'Название модели' : 'Заголовок статьи',
+      submitAdd: (e) => { e.preventDefault(); const f=e.target;
+        if (st.addKind==='model') {
+          const nm = { id:'m'+Date.now(), name:f.a_title.value, cat:f.a_cat.value,
+            short:'Новая модель (черновик).', subsidized:!!f.a_sub.checked, desc:'Описание появится позже.', specs:[] };
+          this.setState({ models:[...st.models, nm], modal:null });
+          this.showToast('Модель добавлена в каталог');
+        } else {
+          const nn = { id:'n'+Date.now(), date:this.today(), title:f.a_title.value, excerpt:'Черновик статьи.', body:['Текст статьи появится позже.'] };
+          this.setState({ news:[nn, ...st.news], modal:null });
+          this.showToast('Статья создана');
+        } },
+      onHeroTitle: (e) => this.setState({ heroTitle: e.target.value }),
+      onHeroSubtitle: (e) => this.setState({ heroSubtitle: e.target.value }),
+      saveSettings: () => this.showToast('Настройки сохранены'),
+    };
+  }
+
+  today() { const d = new Date(); return String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear(); }
+}
+</script>
+
+
+
+<!-- ============================= AI CHAT BOT ============================= -->
+<style>
+  #shm-chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:var(--color-accent);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow-lg);
+    display:flex;align-items:center;justify-content:center;font-size:26px;transition:transform .18s,background .18s}
+  #shm-chat-fab:hover{transform:scale(1.06);background:var(--color-accent-600)}
+  #shm-chat-fab.hidden{display:none}
+  #shm-call-fab{position:fixed;right:22px;bottom:92px;z-index:60;width:56px;height:56px;border-radius:50%;
+    background:#fff;color:var(--color-accent);border:2px solid var(--color-accent);cursor:pointer;
+    box-shadow:0 6px 18px color-mix(in srgb,#1d3f0e 22%,transparent);
+    display:flex;align-items:center;justify-content:center;transition:transform .16s,background .16s,color .16s}
+  #shm-call-fab:hover{background:var(--color-accent);color:#fff;transform:scale(1.07)}
+  #shm-call-fab.hidden{display:none}
+  #shm-call-fab::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--color-accent);opacity:.5;animation:callPulse 2s ease-out infinite}
+  @keyframes callPulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.35);opacity:0}}
+  #shm-chat-panel{position:fixed;right:22px;bottom:22px;z-index:61;width:370px;max-width:calc(100vw - 32px);
+    height:560px;max-height:calc(100vh - 44px);background:var(--color-bg);border:1px solid var(--color-divider);
+    box-shadow:var(--shadow-lg);display:none;flex-direction:column;overflow:hidden}
+  #shm-chat-panel.open{display:flex}
+  .shm-chat-head{background:var(--color-accent);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+  .shm-chat-head .t{font-family:var(--font-heading);font-weight:600;font-size:17px;line-height:1.1}
+  .shm-chat-head .s{font-size:12px;opacity:.85}
+  .shm-chat-head button{margin-left:auto;background:transparent;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;padding:2px 6px}
+  .shm-chat-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--color-surface)}
+  .shm-msg{max-width:82%;padding:10px 13px;font-size:14px;line-height:1.45;border-radius:12px;white-space:pre-wrap;word-wrap:break-word}
+  .shm-msg.bot{align-self:flex-start;background:var(--color-bg);border:1px solid var(--color-divider);border-bottom-left-radius:3px}
+  .shm-msg.user{align-self:flex-end;background:var(--color-accent);color:#fff;border-bottom-right-radius:3px}
+  .shm-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 10px;background:var(--color-surface)}
+  .shm-chip{font-size:13px;padding:6px 11px;border:1px solid var(--color-accent);color:var(--color-accent-700);
+    background:var(--color-bg);border-radius:16px;cursor:pointer;transition:background .15s}
+  .shm-chip:hover{background:var(--color-accent-100)}
+  .shm-chat-foot{display:flex;gap:8px;padding:12px;border-top:1px solid var(--color-divider);background:var(--color-bg)}
+  .shm-chat-foot input{flex:1;border:1px solid var(--color-divider);border-radius:20px;padding:10px 14px;font-size:14px;font-family:var(--font-body);outline:none}
+  .shm-chat-foot input:focus{border-color:var(--color-accent)}
+  .shm-chat-foot button{background:var(--color-accent);color:#fff;border:none;border-radius:20px;padding:0 16px;cursor:pointer;font-size:15px}
+  .shm-chat-foot button:hover{background:var(--color-accent-600)}
+  .shm-typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px}
+  .shm-typing span{width:7px;height:7px;border-radius:50%;background:var(--color-accent);opacity:.5;animation:shmblink 1s infinite}
+  .shm-typing span:nth-child(2){animation-delay:.2s}.shm-typing span:nth-child(3){animation-delay:.4s}
+  @keyframes shmblink{0%,60%,100%{opacity:.3}30%{opacity:1}}
+  @media(max-width:480px){#shm-chat-panel{right:8px;bottom:8px;height:calc(100vh - 16px)}}
+</style>
+
+<button id="shm-call-fab" aria-label="Заказать звонок" title="Заказать звонок">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+</button>
+<button id="shm-chat-fab" aria-label="Открыть чат" title="Задать вопрос">💬</button>
+
+<div id="shm-chat-panel" role="dialog" aria-label="Чат-бот СХМ Агро">
+  <div class="shm-chat-head">
+    <div>
+      <div class="t">Помощник СХМ Агро</div>
+      <div class="s">Отвечаем по технике, ценам и сервису</div>
+    </div>
+    <button id="shm-chat-close" aria-label="Закрыть">×</button>
+  </div>
+  <div class="shm-chat-body" id="shm-chat-body"></div>
+  <div class="shm-chips" id="shm-chat-chips"></div>
+  <div class="shm-chat-foot">
+    <input id="shm-chat-input" type="text" placeholder="Напишите вопрос…" autocomplete="off">
+    <button id="shm-chat-send" aria-label="Отправить">→</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---- Knowledge base (данные сайта). Обновляй здесь при изменении каталога/контактов. ----
+  var KB = {
+    company:"ТОО «СХМ Агро» — казахстанский производитель и поставщик сельхозтехники с полным циклом: от литья узлов до сборки и сервиса. 18 лет на рынке.",
+    contacts:{ phone:"+7 7172 55-00-00", email:"info@shmagro.kz", addr:"г. Астана, Индустриальная зона, ул. Заводская 7", hours:"Пн–Пт 8:00–18:00, Сб 9:00–14:00" },
+    leasing:"Технику можно оформить в лизинг через КазАгроФинанс с господдержкой: первоначальный взнос, льготная ставка и понятный график платежей.",
+    subsidy:"Часть техники входит в перечень государственных субсидий. Актуальный список моделей и условия — на портале ГосАгро. Субсидируемые модели отмечены в каталоге.",
+    service:"У нас полный цикл сервиса: гарантийное и постгарантийное обслуживание, склад запчастей, выездные бригады в период посевной и уборочной.",
+    models:[
+      {n:"Трактор СХМ-2204",d:"колёсный трактор 220 л.с., тяговый класс 5, привод 4×4 — для тяжёлых полевых работ.",sub:true},
+      {n:"Трактор СХМ-1523",d:"универсальный трактор 150 л.с. для средних хозяйств.",sub:false},
+      {n:"Комбайн СХМ-Есіл 760",d:"зерноуборочный комбайн 330 л.с., жатка 7 м, бункер 9000 л.",sub:true},
+      {n:"Сеялка СХМ-СЗ-5,4",d:"прицепная зерновая сеялка, ширина захвата 5,4 м.",sub:true},
+      {n:"Посевной комплекс СХМ-ПК-9,6",d:"широкозахватный комплекс 9,6 м для больших площадей.",sub:false},
+      {n:"Борона СХМ-БДМ-4×4",d:"дисковая борона для лущения стерни и обработки почвы.",sub:false}
+    ]
+  };
+
+  // ---- Адрес бэкенда. Локально — localhost:3001. При деплое поменяй на адрес Render. ----
+  var BACKEND_URL = "http://localhost:3001/api/chat";
+  var chatHistory = []; // история диалога для контекста AI
+
+  // ---- Ответ бота: сначала пробуем AI-бэкенд, при сбое — локальные ответы. ----
+  async function getBotReply(text){
+    try {
+      var ctrl = new AbortController();
+      var t = setTimeout(function(){ ctrl.abort(); }, 27000);
+      var r = await fetch(BACKEND_URL, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({ message:text, history:chatHistory }),
+        signal: ctrl.signal
+      });
+      clearTimeout(t);
+      if(!r.ok) throw new Error("backend "+r.status);
+      var data = await r.json();
+      var reply = (data && data.reply) ? data.reply : localReply(text);
+      chatHistory.push({role:"user",content:text});
+      chatHistory.push({role:"assistant",content:reply});
+      if(chatHistory.length>12) chatHistory = chatHistory.slice(-12);
+      return reply;
+    } catch(e){
+      // Бэкенд не запущен или недоступен — отвечаем локально (без AI)
+      return localReply(text);
+    }
+  }
+
+  // ---- Локальные ответы (запасной вариант, если бэкенд offline) ----
+  function localReply(text){
+    var q = text.toLowerCase();
+    var has = function(){ for(var i=0;i<arguments.length;i++){ if(q.indexOf(arguments[i])>-1) return true;} return false; };
+
+    if(has("привет","здравств","салам","добрый")) return "Здравствуйте! Я помощник СХМ Агро. Спрашивайте про технику, цены, лизинг, субсидии или сервис.";
+    if(has("цена","стоим","сколько стоит","прайс","кп","предложение")) return "Точную цену и коммерческое предложение подготовят менеджеры под ваше хозяйство. Нажмите «Получить КП» на сайте или позвоните "+KB.contacts.phone+". Также доступен лизинг и субсидии.";
+    if(has("лизинг","рассрочк","кредит","казагро")) return KB.leasing;
+    if(has("субсид","госагро","господдерж","льгот")) return KB.subsidy;
+    if(has("сервис","гаранти","ремонт","запчаст","обслуж")) return KB.service;
+    if(has("контакт","адрес","где вы","телефон","почта","email","позвон","часы","график","режим")) return "Контакты СХМ Агро:\n📍 "+KB.contacts.addr+"\n📞 "+KB.contacts.phone+"\n✉️ "+KB.contacts.email+"\n🕒 "+KB.contacts.hours;
+    if(has("о компан","кто вы","чем занима","производ")) return KB.company;
+    if(has("трактор")){ var t=KB.models.filter(function(m){return m.n.toLowerCase().indexOf("трактор")>-1;}); return "Наши тракторы:\n"+t.map(function(m){return "• "+m.n+" — "+m.d+(m.sub?" (субсидируется)":"");}).join("\n"); }
+    if(has("комбайн","уборк","есіл","есил")){ var t=KB.models.filter(function(m){return m.n.toLowerCase().indexOf("комбайн")>-1;}); return t.map(function(m){return "• "+m.n+" — "+m.d+(m.sub?" (субсидируется)":"");}).join("\n"); }
+    if(has("сеялк","посев","комплекс","борон","почв")){ var t=KB.models.filter(function(m){return /сеялк|посев|комплекс|борон/.test(m.n.toLowerCase());}); return "Посевная и почвообрабатывающая техника:\n"+t.map(function(m){return "• "+m.n+" — "+m.d+(m.sub?" (субсидируется)":"");}).join("\n"); }
+    if(has("техник","каталог","модел","что есть","ассортимент","продук")) return "В каталоге СХМ Агро:\n"+KB.models.map(function(m){return "• "+m.n+(m.sub?" (субсидируется)":"");}).join("\n")+"\n\nСпросите про конкретную категорию — расскажу подробнее.";
+    if(has("спасибо","благодар")) return "Пожалуйста! Если нужно — подготовим КП или соединим с менеджером. 🌾";
+
+    return "Я подскажу по технике, ценам, лизингу, субсидиям и сервису СХМ Агро. Уточните вопрос или позвоните "+KB.contacts.phone+". Можно нажать одну из кнопок ниже 👇";
+  }
+
+  var fab=document.getElementById('shm-chat-fab');
+  var panel=document.getElementById('shm-chat-panel');
+  var body=document.getElementById('shm-chat-body');
+  var input=document.getElementById('shm-chat-input');
+  var chipsBox=document.getElementById('shm-chat-chips');
+  var started=false;
+
+  var chips=["Каталог техники","Цены и КП","Лизинг","Субсидии","Сервис","Контакты"];
+  chips.forEach(function(c){
+    var b=document.createElement('button'); b.className='shm-chip'; b.textContent=c;
+    b.onclick=function(){ send(c); };
+    chipsBox.appendChild(b);
+  });
+
+  function scroll(){ body.scrollTop=body.scrollHeight; }
+  function addUser(t){ var el=document.createElement('div'); el.className='shm-msg user'; el.textContent=t; body.appendChild(el); scroll(); }
+  function addBot(t){ var el=document.createElement('div'); el.className='shm-msg bot'; el.textContent=t; body.appendChild(el); scroll(); }
+  function typing(on){
+    var ex=document.getElementById('shm-typing-ind');
+    if(on){ if(ex)return; var el=document.createElement('div'); el.className='shm-typing'; el.id='shm-typing-ind'; el.innerHTML='<span></span><span></span><span></span>'; body.appendChild(el); scroll(); }
+    else if(ex){ ex.remove(); }
+  }
+  function send(text){
+    text=(text||input.value).trim(); if(!text) return;
+    input.value=''; addUser(text); typing(true);
+    setTimeout(function(){
+      Promise.resolve(getBotReply(text)).then(function(reply){ typing(false); addBot(reply); });
+    }, 450);
+  }
+  function open(){
+    panel.classList.add('open'); fab.classList.add('hidden');
+    if(!started){ started=true; addBot("Здравствуйте! 🌾 Я помощник СХМ Агро. Помогу с выбором техники, расскажу про цены, лизинг, субсидии и сервис. С чего начнём?"); }
+    setTimeout(function(){ input.focus(); }, 100);
+  }
+  function close(){ panel.classList.remove('open'); fab.classList.remove('hidden'); }
+
+  fab.onclick=open;
+  document.getElementById('shm-chat-close').onclick=close;
+  document.getElementById('shm-chat-send').onclick=function(){ send(); };
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); send(); } });
+})();
+</script>
+
+<script>
+(function(){
+  var root=document.documentElement, raf=null, tx=window.innerWidth/2, ty=window.innerHeight/2, cx=window.innerWidth/2, cy=window.innerHeight/2, active=false;
+  var R=180;
+  function isOverContent(el){
+    while(el && el!==document.body){
+      if(el.classList && (el.classList.contains('blueprint')||el.classList.contains('card')||el.classList.contains('dialog')||el.tagName==='NAV'||el.classList.contains('nav')||el.id==='shm-lb'||el.id==='shm-chat-panel')) return true;
+      el=el.parentElement;
+    }
+    return false;
+  }
+  function tick(){
+    cx += (tx-cx)*0.14; cy += (ty-cy)*0.14;
+    var r = active ? R : 0;
+    root.style.setProperty('--spot-x', cx+'px');
+    root.style.setProperty('--spot-y', cy+'px');
+    root.style.setProperty('--spot-r', r+'px');
+    if(Math.abs(tx-cx)>0.5||Math.abs(ty-cy)>0.5||active){ raf=requestAnimationFrame(tick); } else { raf=null; }
+  }
+  window.addEventListener('pointermove', function(e){
+    if(e.pointerType==='touch'){ active=false; return; }
+    tx=e.clientX; ty=e.clientY;
+    active = !isOverContent(e.target);
+    if(!raf) raf=requestAnimationFrame(tick);
+  });
+  window.addEventListener('pointerleave', function(){ active=false; if(!raf) raf=requestAnimationFrame(tick); });
+  window.addEventListener('resize', function(){ tx=window.innerWidth/2; ty=window.innerHeight/2; cx=tx; cy=ty; if(!raf) raf=requestAnimationFrame(tick); });
+})();
+</script>
+<script>
+(function(){
+  var callFab=document.getElementById('shm-call-fab');
+  if(!callFab) return;
+  callFab.addEventListener('click',function(){
+    var hidden=[].slice.call(document.querySelectorAll('button')).find(function(b){
+      return b!==callFab && /Заказать звонок/.test(b.textContent) && b.offsetParent===null;
+    });
+    if(hidden){ hidden.click(); }
+    else { window.location.href='tel:+77172550000'; }
+  });
+})();
+</script>
+<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var menu=document.getElementById('shm-mobile-menu');
+    if(!menu) return;
+    var burger=e.target.closest('#shm-burger');
+    if(burger){ e.preventDefault(); e.stopPropagation(); menu.classList.toggle('open'); return; }
+    if(e.target.closest('.mm-link')){ menu.classList.remove('open'); return; }
+    if(!menu.contains(e.target)){ menu.classList.remove('open'); }
+  });
+})();
+</script>
+</body></html>
