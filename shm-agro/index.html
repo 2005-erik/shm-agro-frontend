@@ -1453,6 +1453,42 @@ textarea.input { min-height: 90px; resize: vertical; }
 </sc-if>
 
 </div>
+<!-- MODAL: РЕДАКТИРОВАНИЕ МОДЕЛИ -->
+<sc-if value="{{ editModelOpen }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:62" sc-camel-on-click="{{ closeModalBg }}">
+  <div class="dialog blueprint" style="width:min(520px,100%)" sc-camel-on-click="{{ stop }}">
+    <div class="dialog-title">Редактирование модели</div>
+    <div class="field" style="margin-bottom:12px"><label>Название</label><input id="em_name" class="input" value="{{ editModelName }}" sc-camel-on-change="{{ onEmName }}"></div>
+    <div class="field" style="margin-bottom:12px"><label>Краткое описание</label><textarea id="em_short" class="input" rows="2" sc-camel-on-change="{{ onEmShort }}">{{ editModelShort }}</textarea></div>
+    <div class="field" style="margin-bottom:12px"><label>Категория</label>
+      <select id="em_cat" class="input" sc-camel-on-change="{{ onEmCat }}">
+        <sc-for list="{{ editModelCats }}" as="c" hint-placeholder-count="4"><option value="{{ c.id }}" sc-camel-selected="{{ c.sel }}">{{ c.name }}</option></sc-for>
+      </select>
+    </div>
+    <div class="field" style="margin-bottom:16px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input id="em_sub" type="checkbox" sc-camel-checked="{{ editModelSubsidized }}" sc-camel-on-change="{{ onEmSub }}"> Субсидируется</label></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ closeModal }}">Отмена</button>
+      <button type="button" class="btn btn-primary" sc-camel-on-click="{{ saveEditModel }}">Сохранить</button>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- MODAL: РЕДАКТИРОВАНИЕ СТАТЬИ -->
+<sc-if value="{{ editNewsOpen }}" hint-placeholder-val="{{ false }}">
+<div class="dialog-backdrop" style="z-index:62" sc-camel-on-click="{{ closeModalBg }}">
+  <div class="dialog blueprint" style="width:min(520px,100%)" sc-camel-on-click="{{ stop }}">
+    <div class="dialog-title">Редактирование статьи</div>
+    <div class="field" style="margin-bottom:12px"><label>Заголовок</label><input id="en_title" class="input" value="{{ editNewsTitle }}" sc-camel-on-change="{{ onEnTitle }}"></div>
+    <div class="field" style="margin-bottom:12px"><label>Дата</label><input id="en_date" class="input" value="{{ editNewsDate }}" sc-camel-on-change="{{ onEnDate }}"></div>
+    <div class="field" style="margin-bottom:16px"><label>Краткое описание</label><textarea id="en_excerpt" class="input" rows="3" sc-camel-on-change="{{ onEnExcerpt }}">{{ editNewsExcerpt }}</textarea></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ closeModal }}">Отмена</button>
+      <button type="button" class="btn btn-primary" sc-camel-on-click="{{ saveEditNews }}">Сохранить</button>
+    </div>
+  </div>
+</div>
+</sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script="">
 class Component extends DCLogic {
@@ -1814,6 +1850,43 @@ class Component extends DCLogic {
         } },
       onHeroTitle: (e) => this.setState({ heroTitle: e.target.value }),
       onHeroSubtitle: (e) => this.setState({ heroSubtitle: e.target.value }),
+      editModelOpen: st.modal === 'editModel',
+      editModelName: st.editForm.name || '',
+      editModelShort: st.editForm.short || '',
+      editModelCats: this.state.cats.map(c => ({ id:c.id, name:c.name, sel: st.editForm.cat === c.id })),
+      editModelSubsidized: !!st.editForm.subsidized,
+      onEmName: (e) => this.setState({ editForm: { ...this.state.editForm, name: e.target.value } }),
+      onEmShort: (e) => this.setState({ editForm: { ...this.state.editForm, short: e.target.value } }),
+      onEmCat: (e) => this.setState({ editForm: { ...this.state.editForm, cat: e.target.value } }),
+      onEmSub: (e) => this.setState({ editForm: { ...this.state.editForm, subsidized: e.target.checked } }),
+      saveEditModel: () => {
+        const id = this.state.editModelId, f = this.state.editForm;
+        this.setState({ models: this.state.models.map(x => x.id === id ? {
+          ...x,
+          name: (f.name && f.name.trim()) ? f.name.trim() : x.name,
+          short: f.short !== undefined ? f.short : x.short,
+          cat: f.cat || x.cat,
+          subsidized: !!f.subsidized,
+        } : x), modal:null });
+        this.showToast('Модель обновлена');
+      },
+      editNewsOpen: st.modal === 'editNews',
+      editNewsTitle: st.editForm.title || '',
+      editNewsDate: st.editForm.date || '',
+      editNewsExcerpt: st.editForm.excerpt || '',
+      onEnTitle: (e) => this.setState({ editForm: { ...this.state.editForm, title: e.target.value } }),
+      onEnDate: (e) => this.setState({ editForm: { ...this.state.editForm, date: e.target.value } }),
+      onEnExcerpt: (e) => this.setState({ editForm: { ...this.state.editForm, excerpt: e.target.value } }),
+      saveEditNews: () => {
+        const id = this.state.editNewsId, f = this.state.editForm;
+        this.setState({ news: this.state.news.map(x => x.id === id ? {
+          ...x,
+          title: (f.title && f.title.trim()) ? f.title.trim() : x.title,
+          date: (f.date && f.date.trim()) ? f.date.trim() : x.date,
+          excerpt: f.excerpt !== undefined ? f.excerpt : x.excerpt,
+        } : x), modal:null });
+        this.showToast('Статья обновлена');
+      },
       saveSettings: () => this.showToast('Настройки сохранены'),
     };
   }
