@@ -845,6 +845,9 @@ textarea.input { min-height: 90px; resize: vertical; }
     position: fixed !important; top: 76px !important; left: 12px !important; right: 12px !important;
     margin: 0 !important; max-height: calc(100vh - 96px); overflow-y: auto; z-index: 55 !important;
   }
+  aside.blueprint { position: static !important; top: auto !important; margin-bottom: 20px; }
+  .admin-scroll { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .admin-scroll table, .admin-scroll .table, .admin-scroll .grid-stack { min-width: 620px; }
   /* --- производительность на слабых телефонах: отключаем тяжёлые эффекты --- */
   body::before { background-attachment: scroll !important; filter: saturate(0.45) brightness(1.25) !important; }
   body::after { display: none !important; }
@@ -1068,6 +1071,7 @@ textarea.input { min-height: 90px; resize: vertical; }
         <button type="button" class="btn btn-secondary" style="font-size:17px;padding:14px 24px" sc-camel-on-click="{{ openCall }}">Заказать звонок</button>
       </div>
       <h3 style="font-size:20px;text-transform:uppercase;margin:0 0 8px">Технические характеристики</h3>
+      <div class="admin-scroll">
       <sc-raw-table class="table">
         <sc-raw-tbody>
           <sc-for list="{{ modelSpecs }}" as="row" hint-placeholder-count="6">
@@ -1075,6 +1079,7 @@ textarea.input { min-height: 90px; resize: vertical; }
           </sc-for>
         </sc-raw-tbody>
       </sc-raw-table>
+      </div>
     </div>
   </div>
 </main>
@@ -1220,6 +1225,7 @@ textarea.input { min-height: 90px; resize: vertical; }
         <h1 style="font-size:28px;text-transform:uppercase;margin:0">Каталог техники</h1>
         <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openAddModel }}">+ Добавить модель</button>
       </div>
+      <div class="admin-scroll">
       <sc-raw-table class="table">
         <sc-raw-thead><sc-raw-tr><sc-raw-th>Название</sc-raw-th><sc-raw-th>Категория</sc-raw-th><sc-raw-th>Субсидия</sc-raw-th><sc-raw-th>Статус</sc-raw-th><sc-raw-th style="width:120px"></sc-raw-th></sc-raw-tr></sc-raw-thead>
         <sc-raw-tbody>
@@ -1234,6 +1240,7 @@ textarea.input { min-height: 90px; resize: vertical; }
           </sc-for>
         </sc-raw-tbody>
       </sc-raw-table>
+      </div>
     </sc-if>
     <!-- admin: news -->
     <sc-if value="{{ adminNews }}" hint-placeholder-val="{{ false }}">
@@ -1241,6 +1248,7 @@ textarea.input { min-height: 90px; resize: vertical; }
         <h1 style="font-size:28px;text-transform:uppercase;margin:0">Новости и статьи</h1>
         <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openAddNews }}">+ Создать статью</button>
       </div>
+      <div class="admin-scroll">
       <sc-raw-table class="table">
         <sc-raw-thead><sc-raw-tr><sc-raw-th>Заголовок</sc-raw-th><sc-raw-th>Дата</sc-raw-th><sc-raw-th>Статус</sc-raw-th><sc-raw-th style="width:120px"></sc-raw-th></sc-raw-tr></sc-raw-thead>
         <sc-raw-tbody>
@@ -1254,11 +1262,13 @@ textarea.input { min-height: 90px; resize: vertical; }
           </sc-for>
         </sc-raw-tbody>
       </sc-raw-table>
+      </div>
     </sc-if>
     <!-- admin: requests -->
     <sc-if value="{{ adminRequests }}" hint-placeholder-val="{{ false }}">
       <h1 style="font-size:28px;text-transform:uppercase;margin:0 0 6px">Заявки</h1>
       <p style="margin:0 0 18px;font-size:14px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">Входящие запросы на КП и заказы звонка. Меняйте статус по мере обработки.</p>
+      <div class="admin-scroll">
       <sc-raw-table class="table">
         <sc-raw-thead><sc-raw-tr><sc-raw-th>Дата</sc-raw-th><sc-raw-th>Тип</sc-raw-th><sc-raw-th>Имя</sc-raw-th><sc-raw-th>Телефон</sc-raw-th><sc-raw-th>Модель / регион</sc-raw-th><sc-raw-th style="width:150px">Статус</sc-raw-th></sc-raw-tr></sc-raw-thead>
         <sc-raw-tbody>
@@ -1280,6 +1290,7 @@ textarea.input { min-height: 90px; resize: vertical; }
           </sc-for>
         </sc-raw-tbody>
       </sc-raw-table>
+      </div>
     </sc-if>
     <!-- admin: settings -->
     <sc-if value="{{ adminSettings }}" hint-placeholder-val="{{ false }}">
