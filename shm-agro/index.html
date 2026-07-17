@@ -2016,4 +2016,21 @@ class Component extends DCLogic {
   });
 })();
 </script>
+<script>
+(function(){
+  function updateFabs(){
+    var call=document.getElementById('shm-call-fab');
+    var chat=document.getElementById('shm-chat-fab');
+    var inAdmin=[].slice.call(document.querySelectorAll('a,button,span')).some(function(el){
+      return el.offsetParent!==null && /На сайт/.test(el.textContent);
+    });
+    if(call) call.style.display = inAdmin ? 'none' : '';
+    if(chat) chat.style.display = inAdmin ? 'none' : '';
+  }
+  var mo=new MutationObserver(updateFabs);
+  mo.observe(document.body,{childList:true,subtree:true});
+  document.addEventListener('click', function(){ setTimeout(updateFabs, 100); });
+  updateFabs();
+})();
+</script>
 </body></html>
