@@ -1219,6 +1219,21 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 <!-- ============================= ADMIN ============================= -->
 <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ showLogin }}" hint-placeholder-val="{{ false }}">
+<main style="position:fixed;inset:0;z-index:70;background:var(--color-bg);display:grid;place-items:center;padding:24px;overflow:auto">
+  <div class="blueprint" style="padding:32px 28px;width:min(420px,100%)">
+    <h1 style="font-size:26px;text-transform:uppercase;margin:0 0 6px">Вход в админку</h1>
+    <p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 60%,transparent);margin:0 0 22px">Доступ только для сотрудников СХМ Агро.</p>
+    <form sc-camel-on-submit="{{ doLogin }}" style="display:grid;gap:14px">
+      <div class="field"><label>Email</label><input class="input" name="a_email" type="email" required="" style="min-height:44px;font-size:16px" placeholder="admin@shmagro.kz"></div>
+      <div class="field"><label>Пароль</label><input class="input" name="a_pass" type="password" required="" style="min-height:44px;font-size:16px" placeholder="parol"></div>
+      <div style="color:#c0392b;font-size:14px;min-height:18px">{{ authError }}</div>
+      <button type="submit" class="btn btn-primary" style="min-height:46px;font-size:16px">Войти</button>
+    </form>
+    <a sc-camel-on-click="{{ goHome }}" style="display:inline-block;margin-top:16px;color:var(--color-accent-700);cursor:pointer;font-size:14px">На сайт</a>
+  </div>
+</main>
+</sc-if>
 <div class="grid-stack" style="display:grid;grid-template-columns:220px 1fr;min-height:100vh">
   <aside style="border-right:1px solid var(--color-divider);padding:20px 14px;background:var(--color-surface)">
     <div style="font-family:var(--font-heading);font-weight:600;font-size:16px;padding:0 8px 16px;display:flex;align-items:center;gap:8px">
@@ -1230,6 +1245,7 @@ textarea.input { min-height: 90px; resize: vertical; }
       </sc-for>
     </div>
     <button type="button" class="btn btn-ghost" style="margin-top:20px;padding-left:8px" sc-camel-on-click="{{ goHome }}">← На сайт</button>
+  <button type="button" class="btn btn-ghost" style="margin-top:4px;padding-left:8px;color:#c0392b" sc-camel-on-click="{{ doLogout }}">Выйти</button>
   </aside>
   <div style="padding:28px 32px;background:var(--color-bg)">
     <!-- admin: catalog -->
@@ -1498,7 +1514,7 @@ class Component extends DCLogic {
     lightboxOpen: false, lightboxImages: [], lightboxIndex: 0, lightboxTitle: '',
     heroTitle: 'Сельхозтехника, сделанная для степи',
     heroSubtitle: 'Собственное производство тракторов, комбайнов и посевных комплексов в Казахстане.',
-    adminTab: 'catalog', toast: null, editForm: {},
+    adminTab: 'catalog', toast: null, editForm: {}, authed: false, authError: '',
     models: [
       { id:'t2204', name:'Трактор СХМ-2204', cat:'traktory', photo:'assets/t2204-main.jpg', gallery:['assets/t2204-side.jpg','assets/t2204-rear.jpg','assets/t2204-cabin.jpg','assets/t2204-work.jpg'], short:'Мощный колёсный трактор 220 л.с. для тяжёлых полевых работ.', subsidized:true,
         desc:'Универсальный колёсный трактор тягового класса 5 для основной обработки почвы, посева и транспортных работ. Двигатель с турбонаддувом, комфортная кабина с кондиционером и малошумной изоляцией. Рассчитан на интенсивную эксплуатацию в условиях резко-континентального климата.',
@@ -1729,6 +1745,8 @@ class Component extends DCLogic {
       isHome: page === 'home', isCatalog: page === 'catalog', isModel: page === 'model',
       isNews: page === 'news', isArticle: page === 'article', isContacts: page === 'contacts',
       isAdmin: page === 'admin',
+      showLogin: page === 'admin' && st.authed !== true,
+      authError: st.authError,
       navCatalogCls: (page === 'catalog' || page === 'model') ? 'nav-cta is-active' : 'nav-cta',
       navNewsCls: (page === 'news' || page === 'article') ? 'navlink hide-sm is-active' : 'navlink hide-sm',
       navContactsCls: page === 'contacts' ? 'navlink hide-sm is-active' : 'navlink hide-sm',
@@ -1738,6 +1756,20 @@ class Component extends DCLogic {
       goHome: () => this.go('home'), goCatalog: () => this.go('catalog'),
       goAbout: () => this.go('home', {}), goNews: () => this.go('news'),
       goContacts: () => this.go('contacts'), goAdmin: () => this.go('admin'),
+      doLogin: (e) => {
+        e.preventDefault(); const f = e.target;
+        const email = f.a_email.value.trim(), pass = f.a_pass.value;
+        if (!window.__supa) { this.setState({ authError: 'База недоступна. Проверьте интернет.' }); return; }
+        this.setState({ authError: '' });
+        window.__supa.auth.signInWithPassword({ email, password: pass }).then((res) => {
+          if (res.error) { this.setState({ authError: 'Неверный email или пароль.' }); }
+          else { this.setState({ authed: true, authError: '' }); this.showToast('Вход выполнен'); }
+        }, () => this.setState({ authError: 'Ошибка входа. Попробуйте ещё раз.' }));
+      },
+      doLogout: () => {
+        if (window.__supa) { window.__supa.auth.signOut().then(()=>{}, ()=>{}); }
+        this.setState({ authed: false }); this.go('home');
+      },
 
       // home data
       stats: st.stats,
