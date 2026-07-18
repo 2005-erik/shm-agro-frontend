@@ -236,12 +236,14 @@ body::before {
   content: ""; position: fixed; inset: 0; z-index: -2;
   background-image: url("assets/hero-bg.jpg");
   background-size: cover; background-position: center; background-attachment: fixed;
-  filter: saturate(1.05) brightness(1.02);
+  filter: saturate(0.2) brightness(1.45) blur(2px);
 }
 body::after {
-  content: ""; position: fixed; inset: 0; z-index: -2;
-  background: rgba(255,255,255,0);
-  pointer-events: none;
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background-image: url("assets/hero-bg.jpg");
+  background-size: cover; background-position: center; background-attachment: fixed;
+  -webkit-mask-image: radial-gradient(circle var(--spot-r, 0px) at var(--spot-x, -600px) var(--spot-y, -600px), #000 0%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(circle var(--spot-r, 0px) at var(--spot-x, -600px) var(--spot-y, -600px), #000 0%, #000 50%, transparent 100%);
 }
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
 
@@ -863,14 +865,12 @@ textarea.input { min-height: 90px; resize: vertical; }
   body::before { background-attachment: scroll !important; filter: saturate(0.45) brightness(1.25) !important; }
   body::after { display: none !important; }
   #sunfield { display: none !important; }
-  #dotgrid { display: none !important; }
   .text-block, .dialog-backdrop, .nav, #shm-mobile-menu.open { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
     }
   </style>
 </helmet>
 
 <canvas id="sunfield"></canvas>
-<canvas id="dotgrid" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none"></canvas>
 <div class="page-layer" style="min-height:100vh;background:transparent">
 
 <nav class="nav" style="position:sticky;top:12px;z-index:40;background:color-mix(in srgb,#ffffff 90%,transparent);backdrop-filter:blur(10px);border:1px solid color-mix(in srgb,var(--color-text) 7%,transparent);border-radius:14px;box-shadow:0 6px 22px color-mix(in srgb,#1d3f0e 12%,transparent);padding:10px 22px;max-width:1180px;margin:12px auto 0">
@@ -2125,66 +2125,32 @@ class Component extends DCLogic {
 
 <script>
 (function(){
-  var cv=document.getElementById('dotgrid');
-  if(!cv) return;
-  if(window.matchMedia('(max-width: 900px)').matches){ cv.style.display='none'; return; }
-  var ctx=cv.getContext('2d');
-  var dpr=Math.min(window.devicePixelRatio||1,2), W=0,H=0;
-  var STEP=15, R=115;
-  var mx=-9999, my=-9999, tmx=-9999, tmy=-9999, active=false, raf=null;
-  var base=document.createElement('canvas'), bctx=base.getContext('2d');
-  function buildBase(){
-    base.width=cv.width; base.height=cv.height;
-    bctx.setTransform(dpr,0,0,dpr,0,0);
-    bctx.clearRect(0,0,W,H);
-    bctx.fillStyle='rgba(20,44,11,0.85)';
-    for(var y=STEP/2;y<H;y+=STEP){ for(var x=STEP/2;x<W;x+=STEP){ bctx.beginPath(); bctx.arc(x,y,1.7,0,7); bctx.fill(); } }
-  }
-  function resize(){
-    W=window.innerWidth; H=window.innerHeight;
-    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    buildBase(); ctx.drawImage(base,0,0,W,H);
-  }
-  function draw(){
-    // рисуем статичную сетку из кэша (быстро), потом только зону глазка
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    ctx.clearRect(0,0,W,H);
-    ctx.drawImage(base,0,0,W,H);
-    if(!active) return;
-    var gx=mx, gy=my;
-    ctx.save();
-    ctx.beginPath(); ctx.arc(gx,gy,R,0,7); ctx.clip();
-    ctx.clearRect(gx-R,gy-R,R*2,R*2);
-    var y0=Math.max(STEP/2, Math.floor((gy-R)/STEP)*STEP+STEP/2);
-    var x0=Math.max(STEP/2, Math.floor((gx-R)/STEP)*STEP+STEP/2);
-    for(var y=y0;y<gy+R && y<H;y+=STEP){
-      for(var x=x0;x<gx+R && x<W;x+=STEP){
-        var d=Math.hypot(x-gx,y-gy);
-        var t=Math.max(0,1-d/R);
-        var ease=t*t*(3-2*t);
-        var rad=1.7+ease*(STEP*0.62-1.7);
-        var g=Math.round(120+ease*90);
-        var rr=Math.round(60+ease*40), bb=Math.round(30+ease*30);
-        var alpha=0.5+ease*0.5;
-        ctx.fillStyle='rgba('+rr+','+g+','+bb+','+alpha+')';
-        ctx.beginPath(); ctx.arc(x,y,rad,0,7); ctx.fill();
-      }
+  var root=document.documentElement, raf=null, tx=window.innerWidth/2, ty=window.innerHeight/2, cx=window.innerWidth/2, cy=window.innerHeight/2, active=false;
+  if(window.matchMedia('(max-width: 760px)').matches) return;
+  var R=180;
+  function isOverContent(el){
+    while(el && el!==document.body){
+      if(el.classList && (el.classList.contains('blueprint')||el.classList.contains('card')||el.classList.contains('dialog')||el.tagName==='NAV'||el.classList.contains('nav')||el.id==='shm-lb'||el.id==='shm-chat-panel')) return true;
+      el=el.parentElement;
     }
-    ctx.restore();
+    return false;
   }
   function tick(){
-    mx += (tmx-mx)*0.16; my += (tmy-my)*0.16;
-    draw();
-    if(Math.abs(tmx-mx)>0.5||Math.abs(tmy-my)>0.5||active){ raf=requestAnimationFrame(tick); } else { raf=null; }
+    cx += (tx-cx)*0.14; cy += (ty-cy)*0.14;
+    var r = active ? R : 0;
+    root.style.setProperty('--spot-x', cx+'px');
+    root.style.setProperty('--spot-y', cy+'px');
+    root.style.setProperty('--spot-r', r+'px');
+    if(Math.abs(tx-cx)>0.5||Math.abs(ty-cy)>0.5||active){ raf=requestAnimationFrame(tick); } else { raf=null; }
   }
   window.addEventListener('pointermove', function(e){
     if(e.pointerType==='touch'){ active=false; return; }
-    tmx=e.clientX; tmy=e.clientY; active=true;
+    tx=e.clientX; ty=e.clientY;
+    active = !isOverContent(e.target);
     if(!raf) raf=requestAnimationFrame(tick);
   });
   window.addEventListener('pointerleave', function(){ active=false; if(!raf) raf=requestAnimationFrame(tick); });
-  window.addEventListener('resize', resize);
-  resize();
+  window.addEventListener('resize', function(){ tx=window.innerWidth/2; ty=window.innerHeight/2; cx=tx; cy=ty; if(!raf) raf=requestAnimationFrame(tick); });
 })();
 </script>
 <script>
